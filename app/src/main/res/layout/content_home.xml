@@ -49,12 +49,63 @@
                     <!-- The Linearlayout for the storyline (first tab) -->
                     <LinearLayout
                         android:id="@+id/HOME"
-                        android:layout_width="50dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="STORYLINES"
                         android:focusable="false"
                         android:orientation="vertical"
                         app:layout_marginLeftPercent="10%"
+                        >
+                      <!--  <LinearLayout android:id="@+id/linearLayout2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <ImageButton android:id="@+id/imgbtnOne"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
+                                android:src="@drawable/ic_drafts_black_48dp"/>
+                                <ImageButton android:id="@+id/imgbtnTwo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="#FFFFFF"
+                                    android:src="@drawable/ic_show_chart_black_48dp"/>
+                        </LinearLayout>-->
+                       <!-- <android.support.design.widget.FloatingActionButton android:src="@drawable/ic_home_white_48dp"
+                            app:fabSize="normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/> -->
+
+                       <!-- <CoordinatorLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <android.support.v7.widget.RecyclerView android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            </android.support.v7.widget.RecyclerView>
+                        </CoordinatorLayout> -->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/PROFILE"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="STORYLINES"
+                        android:focusable="false"
+                        android:orientation="vertical"
+                        android:paddingLeft="-10dp"
+                        app:layout_marginLeftPercent="0%"
+                        >
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/CHATS"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="STORYLINES"
+                        android:focusable="false"
+                        android:orientation="vertical"
+                        app:layout_marginLeftPercent="0%"
                         >
 
                     </LinearLayout>
@@ -62,7 +113,7 @@
                     <!-- The Linearlayout for the COLLECTIONS (second tab) -->
                     <LinearLayout
                         android:id="@+id/GROUPS"
-                        android:layout_width="50dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_marginLeftPercent="0%"
                         android:background="#FFFFFF"
@@ -71,34 +122,23 @@
                         android:orientation="vertical">
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:id="@+id/CHATS"
-                        android:layout_width="50dp"
-                        android:layout_height="match_parent"
-                        android:text="STORYLINES"
-                        android:focusable="false"
-                        android:orientation="vertical"
-                        app:layout_marginLeftPercent="0%"
-                        >
-
-                    </LinearLayout>
-
                     <!-- The Linearlayout for the COLLECTIONS (second tab) -->
                     <LinearLayout
-                        android:id="@+id/NOTIFICATIONS"
+                        android:id="@+id/SEARCH"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_marginLeftPercent="0%"
                         android:paddingLeft="-10dp"
                         android:background="#FFFFFF"
-                        android:text="COLLECTIONS"
+                        android:text="SEARCH"
                         android:focusable="false"
                         android:orientation="vertical">
 
                     </LinearLayout>
+
                     <LinearLayout
-                        android:id="@+id/PROFILE"
-                        android:layout_width="100dp"
+                        android:id="@+id/MENU"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="STORYLINES"
                         android:focusable="false"

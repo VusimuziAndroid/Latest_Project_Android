@@ -27,29 +27,32 @@ public class Home extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         tabhost = (TabHost) findViewById(R.id.tabHost);
         tabhost.setup();
         TabHost.TabSpec  firstText = tabhost.newTabSpec("HOME");
         firstText.setContent(R.id.HOME);
         firstText.setIndicator("",getDrawable(R.drawable.ic_home_white_48dp));
         tabhost.addTab(firstText);
-        TabHost.TabSpec secondText = tabhost.newTabSpec("GROUPS");
-        secondText.setContent(R.id.GROUPS);
+        TabHost.TabSpec secondText = tabhost.newTabSpec("PROFILE");
+        secondText.setContent(R.id.PROFILE);
         secondText.setIndicator("",getDrawable(R.drawable.ic_person_white_48dp));
         tabhost.addTab(secondText);
         TabHost.TabSpec thirdText = tabhost.newTabSpec("CHATS");
         thirdText.setContent(R.id.CHATS);
         thirdText.setIndicator("",getDrawable(R.drawable.ic_drafts_white_48dp));
         tabhost.addTab(thirdText);
-        TabHost.TabSpec fourthText = tabhost.newTabSpec("NOTIFICATIONS");
-        fourthText.setContent(R.id.NOTIFICATIONS);
-        fourthText.setIndicator("",getDrawable(R.drawable.ic_notifications_white_48dp));
+        TabHost.TabSpec fourthText = tabhost.newTabSpec("SEARCH");
+        fourthText.setContent(R.id.SEARCH);
+        fourthText.setIndicator("",getDrawable(R.drawable.ic_search_white_48dp));
         tabhost.addTab(fourthText);
         TabHost.TabSpec fifthText = tabhost.newTabSpec("NOTIFICATIONS");
         fifthText.setContent(R.id.PROFILE);
         fifthText.setIndicator("",getDrawable(R.drawable.ic_person_white_48dp));
         tabhost.addTab(fifthText);
+        TabHost.TabSpec sixthText = tabhost.newTabSpec("MENU");
+        sixthText.setContent(R.id.MENU);
+        sixthText.setIndicator("",getDrawable(R.drawable.ic_person_white_48dp));
+        tabhost.addTab(sixthText);
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
