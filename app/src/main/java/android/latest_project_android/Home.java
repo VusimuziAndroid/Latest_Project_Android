@@ -39,20 +39,20 @@ public class Home extends AppCompatActivity {
         tabhost.addTab(secondText);
         TabHost.TabSpec thirdText = tabhost.newTabSpec("CHATS");
         thirdText.setContent(R.id.CHATS);
-        thirdText.setIndicator("",getDrawable(R.drawable.ic_drafts_white_48dp));
+        thirdText.setIndicator("",getDrawable(R.drawable.ic_question_answer_white_48dp));
         tabhost.addTab(thirdText);
-        TabHost.TabSpec fourthText = tabhost.newTabSpec("SEARCH");
-        fourthText.setContent(R.id.SEARCH);
+        TabHost.TabSpec fourthText = tabhost.newTabSpec("GROUPS");
+        fourthText.setContent(R.id.GROUPS);
         fourthText.setIndicator("",getDrawable(R.drawable.ic_search_white_48dp));
         tabhost.addTab(fourthText);
-        TabHost.TabSpec fifthText = tabhost.newTabSpec("NOTIFICATIONS");
-        fifthText.setContent(R.id.PROFILE);
-        fifthText.setIndicator("",getDrawable(R.drawable.ic_person_white_48dp));
+        TabHost.TabSpec fifthText = tabhost.newTabSpec("MENU");
+        fifthText.setContent(R.id.MENU);
+        fifthText.setIndicator("",getDrawable(R.drawable.ic_apps_white_48dp));
         tabhost.addTab(fifthText);
-        TabHost.TabSpec sixthText = tabhost.newTabSpec("MENU");
+       /* TabHost.TabSpec sixthText = tabhost.newTabSpec("MENU");
         sixthText.setContent(R.id.MENU);
-        sixthText.setIndicator("",getDrawable(R.drawable.ic_person_white_48dp));
-        tabhost.addTab(sixthText);
+        sixthText.setIndicator("",getDrawable(R.drawable.ic_apps_white_48dp));
+        tabhost.addTab(sixthText);*/
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
