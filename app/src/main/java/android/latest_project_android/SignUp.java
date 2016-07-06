@@ -15,9 +15,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.content.Intent;
-import android.content.Context;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,13 +52,12 @@ public class SignUp extends AppCompatActivity {
 
         showProgressBar();
     }
-
     //The method for populating the list view
     public void populateProfileList(){
         String role="Marketing Specialist";
         String relatedRole="30 Psychologists alumni have this role";
         String center="Event Center";
-        profile.add(new Profile(role,relatedRole,R.drawable.pro_pic1));
+        profile.add(new Profile(role,relatedRole,R.drawable.ic_linkedin_pro_picture2,R.drawable.ic_stars_white_48dp));
     }
     //The class for the Array Adapter
     private class MyListAdapter extends ArrayAdapter<Profile> {
@@ -89,12 +86,12 @@ public class SignUp extends AppCompatActivity {
             tvCenter.setText(myprofile.getCenter());*/
             ImageView imageView = (ImageView) itemView.findViewById(R.id.imgProfilePicture);
             imageView.setImageResource(myprofile.getPicture());
-          /*  ImageView imageView2 = (ImageView) itemView.findViewById(R.id.imgIcons2);
-            imageView2.setImageResource(myprofile.getPicture2());*/
+
+            ImageView imageView2 = (ImageView) itemView.findViewById(R.id.imgIcon3);
+            imageView2.setImageResource(myprofile.getImgIcon());
             return itemView;
         }
     }
-
     public void showProgressBar(){
         mProgress = (ProgressBar) findViewById(R.id.prgssBar);
         new Thread(new Runnable(){
@@ -136,7 +133,7 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        Intent timeline = new Intent(SignUp.this,Home.class);
+        Intent timeline = new Intent(SignUp.this,Register.class);
         startActivity(timeline);
     }
 

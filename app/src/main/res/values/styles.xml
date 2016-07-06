@@ -20,5 +20,19 @@
         <item name="android.minHeight">10dp</item>
         <item name="android.maxHeight">20dp</item>
     </style> -->
-
+    <style name="TabText">
+     <item name="android:textColor">@color/tab_text_color</item>
+    </style>
+    
+    <style name="CustomTheme" parent="@android:style/Theme">
+        <item name="android:tabWidgetStyle">@style/CustomTabWidget</item>
+    </style>
+    <style name="CustomTabWidget" parent="@android:style/Widget.TabWidget">
+        <item name="@android:textAppearance">@style/CustomTabWidgetText</item>
+        <item name="android:titleTextColor">@style/CustomTabWidgetText</item>
+    </style>
+    <style name="CustomTabWidgetText"
+        parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
 </resources>

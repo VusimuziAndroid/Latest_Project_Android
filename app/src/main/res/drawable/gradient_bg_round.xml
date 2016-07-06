@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- The item -->
+    <item android:drawable="@drawable/navigation_collapse" android:background="@drawable/gradient_bg_color">
+        <!-- The shape -->
+        <shape android:shape="oval">
+            <!-- The gradient for displaying different colors on the final activity -->
+            <gradient
+                android:angle="90"
+                android:startColor="#046296"
+                android:centerColor="#02659E"
+                android:endColor="#046296"
+                android:type="linear"/>
+            <stroke  android:width="5px"
+                android:color="#FFFFFF"/>
+
+
+        </shape>
+    </item>
+</selector>

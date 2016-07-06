@@ -8,11 +8,13 @@ public class Profile {
     String role;
     String relatedRole;
     String center;
-    public Profile(String role,String relatedRole,int picture){
+    int imgIcon;
+    public Profile(String role,String relatedRole,int picture,int imgIcon){
        // this.picture=picture;
         this.role=role;
         this.relatedRole=relatedRole;
         this.picture=picture;
+        this.imgIcon=imgIcon;
      //   this.center=center;
     }
     //The method for returning the picture
@@ -34,4 +36,5 @@ public class Profile {
     public int getPicture(){
         return this.picture;
     }
+    public int getImgIcon(){return this.imgIcon;}
 }

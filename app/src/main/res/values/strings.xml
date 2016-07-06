@@ -12,4 +12,9 @@
     <string name="text3">Sign in with LinkedIn</string>
     <string name="text2">were out here</string>
     <string name="buttontext">Join now</string>
+    <string name="buttontextLogin">Sign In</string>
+    <string name="title_activity_friendship__requests"></string>
+    <string name="title_activity_register">register</string>
+    <string name="title_activity_add_profile">AddProfile</string>
+    <string name="title_activity_sign_in">SignIn</string>
 </resources>

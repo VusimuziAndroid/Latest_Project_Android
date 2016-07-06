@@ -22,9 +22,9 @@
         android:orderInCategory="100"    app:showAsAction="always"
         android:icon="@drawable/ic_search_white_48dp" />
 
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+    <item android:id="@+id/menu" android:title="@string/menu"
         android:orderInCategory="100"    app:showAsAction="always"
-        android:icon="@drawable/ic_view_comfy_white_48dp" >
+        android:icon="@drawable/ic_apps_white_48dp" >
         <menu>
             <item android:id="@+id/home2" android:title="HOME" android:orderInCategory="100"
                 app:showAsAction="always"   android:icon="@drawable/ic_home_black_48dp"></item>
@@ -35,7 +35,7 @@
             <item android:id="@+id/newstory2" android:title="NEW STORY " android:orderInCategory="100"
                 app:showAsAction="always" android:icon="@drawable/ic_add_black_48dp"></item>
               <item android:id="@+id/sharePic" android:title="SHARE PICTURE" android:orderInCategory="100"
-                   app:showAsAction="always" android:icon="@drawable/content_attachment"></item> -->
+                   app:showAsAction="always" android:icon="@drawable/content_attachment"></item>
         </menu>
     </item>
 </menu>
