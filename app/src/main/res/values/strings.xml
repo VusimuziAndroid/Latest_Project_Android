@@ -12,4 +12,18 @@
     <string name="text3">Sign in with LinkedIn</string>
     <string name="text2">were out here</string>
     <string name="buttontext">Join now</string>
+    <string name="buttontext2">Sign Up</string>
+    <string name="buttontext3">By clicking join now, you agree to LinkedIn User Agreement,Private Policy and Cookie Policy</string>
+    <string name="buttontext4">Connect to Opportunity</string>
+    <string name="buttontext5">TM</string>
+    <string name="buttontext6">ALREADY HAVE AN ACCOUNT? SIGN IN</string>
+    <string name="buttontextLogin">Sign In</string>
+    <string name="title_activity_friendship__requests"></string>
+    <string name="title_activity_register"></string>
+    <string name="title_activity_add_profile">AddProfile</string>
+    <string name="title_activity_sign_in">SignIn</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_welcome_screen">WelcomeScreen</string>
 </resources>
