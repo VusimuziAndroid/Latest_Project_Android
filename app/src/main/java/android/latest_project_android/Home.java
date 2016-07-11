@@ -5,6 +5,9 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -17,6 +20,7 @@ import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +37,10 @@ public class Home extends AppCompatActivity {
     ListView lsItems;
     ListView lsIcons;
     ArrayAdapter<Items>itemAdapter2;
-
+    Toolbar toolbar;
+    ViewPager viewPager;
+    TabLayout tabLayout;
+    ViewPagerAdapter viewPagerAdapter;
     // private ArrayList<Items> itemsArrayList2 = new ArrayList<Items>();
     private List<Items> itemsList2 = new ArrayList<Items>();
     ListView lsItems2;
@@ -41,9 +48,56 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        // viewPagerAdapter.addFragments(new HomeFragment(),"Home");
+        viewPager.setAdapter(viewPagerAdapter);
+        //  viewPagerAdapter.addFragments(new SecondFragment(),"Home");
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);
+        tabLayout.setTabTextColors(getResources().getColor(R.color.tab_text_color), getResources().getColor(R.color.tab_text_color));
+        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.tab_text_color));
+
+
+      /*  TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);*/
+
+        //    viewPagerAdapter.addFragments(new SecondFragment(),"Second Fragment");
+
+       /* TabLayout tabLayout = (TabLayout) findViewById(R.id.toolbar);
+        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
+      /*  final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
+        final PagerAdapter adapter;
+                adapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });*/
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

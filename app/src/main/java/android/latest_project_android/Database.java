@@ -16,7 +16,7 @@ import android.util.Log;
 public class Database extends SQLiteOpenHelper {
     private static final String LOGCAT = null;
     private static final android.database.sqlite.SQLiteDatabase.CursorFactory MODE_PRIVATE = null;
-    public static final String DATABASE_NAME= "LinkedInDB3.db";
+    public static final String DATABASE_NAME = "LinkedInDB4.db";
     SQLiteDatabase db;
     //The constructor for the SQLite Helper (Datasource class)
     DatabaseValues databaseValues = new DatabaseValues();
@@ -28,8 +28,11 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String query;
         //The method for creating the new table on the database
-        db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME + "(Username TEXT PRIMARY KEY,Password TEXT,ConfirmPassword TEXT);");
-        db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME2 + "(Username TEXT PRIMARY KEY,Name TEXT,Surname TEXT,Role TEXT,YearsInExperience INTEGER,High_School_Name TEXT,Tertiary_Name TEXT,VolunteerWork TEXT,Profile_Picture INTEGER);");
+        db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME + "(Username TEXT PRIMARY KEY,FirstName TEXT,LastName TEXT,Password TEXT);");
+        // db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME2 + "(Username TEXT PRIMARY KEY,Name TEXT,Surname TEXT,Role TEXT,YearsInExperience INTEGER,High_School_Name TEXT,Tertiary_Name TEXT,VolunteerWork TEXT,Profile_Picture INTEGER);");
+        db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME2 + "(Username TEXT PRIMARY KEY,CompanyName TEXT,Position TEXT,YearInExperience INTEGER);");
+        db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME3 + "(Username TEXT PRIMARY KEY,HighSchoolName TEXT,YearCompleted INTEGER,TertiaryInstitution TEXT,GraduationYear INTEGER);");
+        db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME4 + "(Username TEXT PRIMARY KEY,V_CompanyName TEXT,V_Position TEXT,V_Duration);");
         //  db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME2 + "(Username TEXT PRIMARY KEY,Picture BLOB);");
         Log.e("DATABASE OPERATIONS", "Table created ...");
     }
@@ -41,16 +44,13 @@ public class Database extends SQLiteOpenHelper {
     }
 
     public void insertUsers(User user){
-
         Tag Tag=null;
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(databaseValues.COLUMN_NAME1,user.getUsername());
-        values.put(databaseValues.COLUMN_NAME2,user.getPassword());
-        values.put(databaseValues.COLUMN_NAME3,user.getConfirmPassword());
-       /* Log.e(String.valueOf(Tag), user.getUsername());
-        Log.e(String.valueOf(Tag), user.getPassword());
-        Log.e(String.valueOf(Tag), user.getConfirmPassword());*/
+        values.put(databaseValues.COLUMN_NAME2, user.getName());
+        values.put(databaseValues.COLUMN_NAME3, user.getSurname());
+        values.put(databaseValues.COLUMN_NAME4, user.getPassword());
         db.insert(databaseValues.TABLE_NAME, null, values);
         db.close();
     }
@@ -92,16 +92,17 @@ public class Database extends SQLiteOpenHelper {
         return cursor;
     }*/
     private class DatabaseValues{
-        private static final String TABLE_NAME = "Users";
-        private static final String TABLE_NAME2 = "Profile";
-        private static final String TABLE_NAME3 ="Picture";;
+       private static final String TABLE_NAME = "Users";
+       private static final String TABLE_NAME2 = "WorkExperience";
+       private static final String TABLE_NAME3 = "Education";
+       private static final String TABLE_NAME4 = "VolunteerExperience";
         private static final String COLUMN_NAME1="Username";
-        private static final String COLUMN_NAME2="Password";
-        private static final String COLUMN_NAME3="ConfirmPassword";
+       private static final String COLUMN_NAME2 = "FirstName";
+       private static final String COLUMN_NAME3 = "LastName";
+       private static final String COLUMN_NAME4 = "Password";
         private static final String STORY_COLUMN_NAME1="Username";
         private static final String STORY_COLUMN_NAME2="Message";
         private static final String STORY_COLUMN_NAME3="MessageType";
         private static final String STORY_COLUMN_NAME4="Picture";
     }
-
 }

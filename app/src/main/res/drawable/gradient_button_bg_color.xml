@@ -7,11 +7,7 @@
         <!-- The shape -->
         <shape>
             <!-- The gradient for displaying different colors on the final activity -->
-            <gradient
-                android:angle="90"
-                android:startColor="#046296"
-                android:centerColor="#02659E"
-                android:endColor="#046296"
+            <gradient android:angle="90" android:startColor="#007AB3" android:centerColor="#007AB5" android:endColor="#0170A8"
                 android:type="linear"/>
             <corners android:radius="3dp"/>
             <stroke  android:width="4px"

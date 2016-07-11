@@ -5,24 +5,32 @@ package android.latest_project_android;
  */
 public class User {
     String username;
+    String name;
+    String surname;
     String password;
-    String confirmPassword;
 
-    public User(String username,String password,String confirmPassword){
+    public User(String username, String name, String surname, String password) {
         this.username=username;
+        this.name = name;
+        this.surname = surname;
         this.password=password;
-        this.confirmPassword=confirmPassword;
     }
     //The method for returning the username
     public String getUsername(){
         return this.username;
     }
+
+    //The method for returning the name
+    public String getName() {
+        return this.name;
+    }
+
+    //The method for returning the surname
+    public String getSurname() {
+        return this.surname;
+    }
     //The method for returning the password
     public String getPassword(){
         return this.password;
-    }
-    //The methos for returning the password
-    public String getConfirmPassword(){
-        return this.confirmPassword;
     }
 }
