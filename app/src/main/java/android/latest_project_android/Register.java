@@ -44,10 +44,10 @@ public class Register extends AppCompatActivity {
     public void onClick(View view){
         Intent welcomeScreen = new Intent(Register.this,WelcomeScreen.class);
         startActivity(welcomeScreen);
-        etEmailAddress = (EditText) findViewById(R.id.etEmailAddress);
-        etFirstName = (EditText) findViewById(R.id.etFirstName);
-        etLastName = (EditText) findViewById(R.id.etLastName);
-        etPassword = (EditText) findViewById(R.id.etPassword);
+        etEmailAddress = (EditText) findViewById(R.id.etEmail);
+        etFirstName = (EditText) findViewById(R.id.etName);
+        etLastName = (EditText) findViewById(R.id.etSurname);
+        etPassword = (EditText) findViewById(R.id.etPasswords);
      /*   String email = etEmailAddress.getText().toString();
         String name = etFirstName.getText().toString();
         String surname = etLastName.getText().toString();
@@ -56,8 +56,8 @@ public class Register extends AppCompatActivity {
         Toast.makeText(Register.this, "Successful" + etEmailAddress.getText(), Toast.LENGTH_SHORT).show();
        // user = new User(email, name, surname, password);
         // Toast.makeText(Register.this," name="+user.getUsername()+" last name="+user.getName()+" email="+user.getSurname()+" password="+user.getPassword(),Toast.LENGTH_SHORT).show();
-        // user = new User(etFirstName.getText().toString(),etLastName.getText().toString(),etEmailAddress.getText().toString(),etPassword.getText().toString());
-       // database.insertUsers(user);
+         user = new User(etFirstName.getText().toString(),etLastName.getText().toString(),etEmailAddress.getText().toString(),etPassword.getText().toString());
+         database.insertUsers(user);
        /* String email = etEmailAddress.getText().toString();
         String name = etFirstName.getText().toString();
         String password = etPassword.getText().toString();

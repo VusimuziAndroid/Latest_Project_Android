@@ -1,26 +1,39 @@
 package android.latest_project_android;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.content.Intent;
-import android.content.Context;
+
+import com.viewpagerindicator.CirclePageIndicator;
+import com.viewpagerindicator.LinePageIndicator;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class SignUp extends AppCompatActivity {
     ListView list;
@@ -32,6 +45,15 @@ public class SignUp extends AppCompatActivity {
     private int mProgressStatus;
     Button BJoin;
     int fileSize=0;
+    TextView textCounter;
+    MyCountRowTimer myCountDownTimer;
+    ProgressDialog progressBar;
+    ViewPager viewPager;
+    PagerAdapter pAdapter;
+    private LinePageIndicator mLinePageIndicator;
+    private CirclePageIndicator mCirclePageIndicator;
+    private ViewPager mViewPager;
+  //  CircleIndicator indicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,20 +69,57 @@ public class SignUp extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        populateProfileList();
+       /* mViewPager = (ViewPager) findViewById(R.id.pager);
+        mCirclePageIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
+
+        CustomPagerAdapter pagerAdapter = new CustomPagerAdapter(getApplicationContext(),R.drawable.ic_fiber_manual_record_white_48dp);
+        mViewPager.setAdapter(pagerAdapter);
+
+        mCirclePageIndicator.setViewPager(mViewPager);*/
+       // SimplePagerAdapter
+        /*viewPager = (ViewPager) findViewById(R.id.viewPager);
+        indicator = (CircleIndicator) findViewById(R.id.indicator);
+        viewPager.setAdapter(pAdapter);
+        indicator.setViewPager(viewPager);*/
+      //  viewPager.setAdapter(adapter);
+
+       /* populateProfileList();
         adapter = new MyListAdapter(getApplicationContext(),R.layout.list_single, profile);
         list = (ListView) findViewById(R.id.lsProfile);
-        list.setAdapter(adapter);
+        list.setAdapter(adapter);*/
+        // mProgress = (ProgressBar) findViewById(R.id.prgssBar);
+        // textCounter = (TextView) findViewById(R.id)
+      /*  mProgress.setProgress(100);
+        myCountDownTimer = new MyCountRowTimer(10000,500);
+        myCountDownTimer.start();*/
 
-        showProgressBar();
+        //  showProgressBar();
+
+        /*{
+            @Override
+            public Fragment getItem(int position) {
+                return null;
+            }
+
+            @Override
+            public int getCount() {
+                return 0;
+            }
+        } */
+        //   viewPager = (ViewPager) findViewById(R.id.pager);
+// RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
     }
-
+    public void onClickLogin2(View view){
+        Intent signin = new Intent(SignUp.this,SignIn.class);
+        startActivity(signin);
+    }
     //The method for populating the list view
     public void populateProfileList(){
         String role="Marketing Specialist";
         String relatedRole="30 Psychologists alumni have this role";
         String center="Event Center";
-        profile.add(new Profile(role,relatedRole,R.drawable.pro_pic1));
+        profile.add(new Profile(role,relatedRole,R.drawable.ic_linkedin_pro_picture2,R.drawable.ic_stars_white_48dp));
     }
     //The class for the Array Adapter
     private class MyListAdapter extends ArrayAdapter<Profile> {
@@ -89,14 +148,14 @@ public class SignUp extends AppCompatActivity {
             tvCenter.setText(myprofile.getCenter());*/
             ImageView imageView = (ImageView) itemView.findViewById(R.id.imgProfilePicture);
             imageView.setImageResource(myprofile.getPicture());
-          /*  ImageView imageView2 = (ImageView) itemView.findViewById(R.id.imgIcons2);
-            imageView2.setImageResource(myprofile.getPicture2());*/
+
+            ImageView imageView2 = (ImageView) itemView.findViewById(R.id.imgIconss3);
+            imageView2.setImageResource(myprofile.getImgIcon());
             return itemView;
         }
     }
-
     public void showProgressBar(){
-        mProgress = (ProgressBar) findViewById(R.id.prgssBar);
+      /*  mProgress = (ProgressBar) findViewById(R.id.prgssBar);
         new Thread(new Runnable(){
             public void run(){
                 while(mProgressStatus < 100){
@@ -115,7 +174,7 @@ public class SignUp extends AppCompatActivity {
                    }) ;
                 }
             }
-        }).start();
+        }).start();*/
     }
 
     public int doWork(){
@@ -136,8 +195,31 @@ public class SignUp extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        Intent timeline = new Intent(SignUp.this,Home.class);
+        Intent timeline = new Intent(SignUp.this,Register.class);
         startActivity(timeline);
     }
 
+    public class MyCountRowTimer extends CountDownTimer {
+
+        /**
+         * @param millisInFuture    The number of millis in the future from the call
+         *                          to {@link #start()} until the countdown is done and {@link #onFinish()}
+         *                          is called.
+         * @param countDownInterval The interval along the way to receive
+         *                          {@link #onTick(long)} callbacks.
+         */
+        public MyCountRowTimer(long millisInFuture, long countDownInterval) {
+            super(millisInFuture, countDownInterval);
+        }
+
+        @Override
+        public void onTick(long millisUntilFinished) {
+
+        }
+
+        @Override
+        public void onFinish() {
+            mProgress.setProgress(0);
+        }
+    }
 }

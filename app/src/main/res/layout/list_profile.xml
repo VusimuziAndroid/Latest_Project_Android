@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+   <!-- <LinearLayout android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"> -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgRoundPic1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginLeftPercent="50%"
+            app:layout_marginTopPercent="12%"
+            app:layout_widthPercent="20%"
+            app:layout_heightPercent="25%"/>
+        <LinearLayout android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_marginTopPercent="13%"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/tvNames2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textStyle="normal"
+                android:textSize="25sp"/>
+            <TextView android:id="@+id/tvSurnames2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textStyle="normal"
+                android:textSize="25sp"/>
+        </LinearLayout>
+    <TextView android:id="@+id/tvRole2"
+        app:layout_marginTopPercent="18%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+    <TextView android:id="@+id/tvAt"
+        app:layout_marginTopPercent="22%"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text=" At "
+        android:textColor="#000000"/>
+    <!-- <TextView android:id="@+id/tvAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:text=" At "
+        android:textColor="#000000"/>-->
+<!--<Linearlayout android:id="@+id/linearLayout3"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView android:id="@+id/tvRole2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        android:textStyle="bold"/> -->
+            <!-- <TextView android:id="@+id/tvAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:text=" At "
+                android:textColor="#000000"/>-->
+                <TextView android:id="@+id/tvOrganization"
+                    app:layout_marginTopPercent="25%"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:textColor="#000000"
+                    />
+      <!-- </Linearlayout> -->
+
+        <TextView android:id="@+id/tvJobAreas2"
+            app:layout_marginTopPercent="28%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout3"
+            android:textStyle="normal"
+            android:textColor="#000000"
+            android:textSize="15sp"/>
+   <!-- </LinearLayout> -->
+
+</android.support.percent.PercentRelativeLayout>
