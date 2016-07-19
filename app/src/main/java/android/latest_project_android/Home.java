@@ -31,33 +31,31 @@ public class Home extends AppCompatActivity {
     Items item;
     Icons icons;
     ArrayAdapter<Items>itemAdapter;
-   // ArrayAdapter<ViewProfile>profileAdapter;
-   // ArrayAdapter<Icons>iconAdapter;
-   // private ArrayList<Items> itemsArrayList = new ArrayList<Items>();
     private List<Items> itemsList = new ArrayList<Items>();
-   // private List<ViewProfile> profileList = new ArrayList<ViewProfile>();
-   // private List<Icons> iconList = new ArrayList<Icons>();
-   // private static ImageView imageViewCircle;
     ListView lsItems;
     ListView lsProfile;
-  //  ListView lsIcons;
-  //  ArrayAdapter<Items>itemAdapter2;
     Toolbar toolbar;
     ViewPager viewPager;
     TabLayout tabLayout;
     ArrayAdapter<ViewProfile> profileAdapter;
     ArrayAdapter<TimeLineInvitations> invitationsAdapter;
+    ArrayAdapter<ViewedProfile> viewedProfilesAdapter;
+    ArrayAdapter<SharedProfile> sharedProfilesAdapter;
+    ArrayAdapter<Followers> followersAdapter;
     ArrayAdapter<Icons>iconAdapter;
-    // private ArrayList<Items> itemsArrayList = new ArrayList<Items>();
     private List<ViewProfile> profileList = new ArrayList<ViewProfile>();
     private List<TimeLineInvitations> invitationsList = new ArrayList<TimeLineInvitations>();
     private List<Icons> iconList = new ArrayList<Icons>();
-
+    private List<ViewedProfile> viewProfileList = new ArrayList<ViewedProfile>();
+    private List<SharedProfile> sharedProfileList = new ArrayList<SharedProfile>();
+    private List<Followers> followersList = new ArrayList<Followers>();
     ListView lsTimeLineInvitations;
+    ListView lsViewedProfile;
+    ListView lsSharedProfile;
+    ListView lsFollowers;
     ListView lsIcons;
     ArrayAdapter<Items>itemAdapter2;
-    //ViewPagerAdapter viewPagerAdapter;
-    // private ArrayList<Items> itemsArrayList2 = new ArrayList<Items>();
+    ImageView imgRoundPic2;
     private List<Items> itemsList2 = new ArrayList<Items>();
     ListView lsItems2;
     @Override
@@ -92,8 +90,24 @@ public class Home extends AppCompatActivity {
         itemAdapter = new MyListAdapterItems(getApplicationContext(),R.layout.list_timeline, itemsList);
         lsItems = (ListView) findViewById(R.id.lsTimeline);
         lsItems.setAdapter(itemAdapter);
+
+        getNumberOfViewedProfile();
+        viewedProfilesAdapter = new MyListAdapterViewedProfile(getApplicationContext(),R.layout.list_viewed_profile, viewProfileList);
+        lsViewedProfile = (ListView) findViewById(R.id.lsViewedProfile);
+        lsViewedProfile.setAdapter(viewedProfilesAdapter);
+
+        getNumberOfSharedProfile();
+        sharedProfilesAdapter = new MyListAdapterSharedProfile(getApplicationContext(),R.layout.list_shared_profile, sharedProfileList);
+        lsSharedProfile = (ListView) findViewById(R.id.lsViewedShared);
+        lsSharedProfile.setAdapter(sharedProfilesAdapter);
+
+        getFollowersList();
+        followersAdapter = new MyListAdapterFollowers(getApplicationContext(),R.layout.list_activity, followersList);
+        lsFollowers = (ListView) findViewById(R.id.lsFollowers);
+        lsFollowers.setAdapter(followersAdapter);
+
         displayTab();
-        displayTab2();
+     //   displayTab2();
     }
     //The method for displaying the Tab Host on the Welcome Screen
     public void displayTab(){
@@ -120,8 +134,7 @@ public class Home extends AppCompatActivity {
         fifthText.setIndicator("", getResources().getDrawable(R.drawable.ic_person_white_48dp));
         tabhost.addTab(fifthText);
     }
-
-    public void displayTab2(){
+  /*  public void displayTab2(){
         tabhost2 = (TabHost) findViewById(R.id.tabHost2);
         tabhost2.setup();
         TabHost.TabSpec  firstTab = tabhost2.newTabSpec("CANCEL");
@@ -136,7 +149,7 @@ public class Home extends AppCompatActivity {
         thirdTab.setContent(R.id.CONNECTIONS);
         thirdTab.setIndicator("CONNECTIONS", getDrawable(R.drawable.ic_photo));
         tabhost2.addTab(thirdTab);
-    }
+    }*/
     //The method for populating the list view
     public void populateItemsList(){
         int proPicture=R.drawable.pro_picture;
@@ -163,12 +176,12 @@ public class Home extends AppCompatActivity {
     }
     //The method for populating the list view
     public void getInvitationsList(){
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic1,"You and Karisa are now","Connected",R.drawable.ic_question_answer_black_48dp,0));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic2,"Patric Farewell","Communications Professionals",R.drawable.ic_highlight_off_black_48dp,R.drawable.ic_person_add_black_48dp));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic3,"You and Tonniane Marie are now friends","connected",0,R.drawable.ic_question_answer_black_48dp));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic4,"Wiston","Global Business director",R.drawable.ic_highlight_off_black_48dp,R.drawable.ic_person_add_black_48dp));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic5,"Paolo","Marketing Manager - I07 Wearable Professional",R.drawable.ic_highlight_off_black_48dp,R.drawable.ic_person_add_black_48dp));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic6,"H. Jay","Principal Communications Group",R.drawable.ic_highlight_off_black_48dp,R.drawable.ic_person_add_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic1, "You and Karisa are now", "Connected", R.drawable.ic_question_answer_black_48dp, 0));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic2, "Patric Farewell", "Communications Professionals", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_person_add_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic3, "You and Tonniane Marie are now friends", "connected", 0, R.drawable.ic_question_answer_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic4, "Wiston", "Global Business director", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_person_add_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic5, "Paolo", "Marketing Manager - I07 Wearable Professional", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_person_add_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic6, "H. Jay", "Principal Communications Group", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_person_add_black_48dp));
     }
     //The class for the Array Adapter
     private class MyListAdapterInvitations extends ArrayAdapter<TimeLineInvitations> {
@@ -246,6 +259,102 @@ public class Home extends AppCompatActivity {
             TextView tvJobAreas2=(TextView) itemView.findViewById(R.id.tvJobAreas2);
             tvJobAreas2.setText(viewProfile.getJobArea());
 
+            TextView tvCountry = (TextView) itemView.findViewById(R.id.tvCountry2);
+            tvCountry.setText(viewProfile.getCountry());
+
+            return itemView;
+        }
+    }
+    //The method for populating the list view
+    public void getNumberOfViewedProfile(){
+        viewProfileList.add(new ViewedProfile("10"));
+    }
+    //The class for the Array Adapter
+    private class MyListAdapterViewedProfile extends ArrayAdapter<ViewedProfile> {
+        int resource;
+        ArrayList<ViewedProfile> viewedProfile= new ArrayList<ViewedProfile>();
+        public MyListAdapterViewedProfile(Context context, int resource, List<ViewedProfile> objects) {
+            super(context, resource, objects);
+            this.resource = resource;
+            viewedProfile = (ArrayList<ViewedProfile>)objects;
+        }
+        @Override
+        public View getView(int position,View convertView,ViewGroup parent){
+            View itemView = convertView;
+
+            if(itemView == null){
+                itemView = getLayoutInflater().inflate(resource,parent,false);
+            }
+            ViewedProfile vprofile =viewedProfile.get(position);
+            TextView tvViewProfile=(TextView) itemView.findViewById(R.id.tvNumViewedProfile);
+            tvViewProfile.setText(vprofile.getNumOfViewedProfiles());
+            return itemView;
+        }
+    }
+    //The method for populating the list view
+    public void getNumberOfSharedProfile(){
+        sharedProfileList.add(new SharedProfile("3"));
+    }
+    //The class for the Array Adapter
+    private class MyListAdapterSharedProfile extends ArrayAdapter<SharedProfile> {
+        int resource;
+        ArrayList<SharedProfile> sharedProfile= new ArrayList<SharedProfile>();
+        public MyListAdapterSharedProfile(Context context, int resource, List<SharedProfile> objects) {
+            super(context, resource, objects);
+            this.resource = resource;
+            sharedProfile = (ArrayList<SharedProfile>)objects;
+        }
+        @Override
+        public View getView(int position,View convertView,ViewGroup parent){
+            View itemView = convertView;
+
+            if(itemView == null){
+                itemView = getLayoutInflater().inflate(resource,parent,false);
+            }
+            SharedProfile sprofile =sharedProfile.get(position);
+            TextView tvSharedProfile=(TextView) itemView.findViewById(R.id.tvNumSharedProfile);
+            tvSharedProfile.setText(sprofile.getNumOfSharedProfile());
+
+            return itemView;
+        }
+    }
+
+    public void getFollowersList(){
+        followersList.add(new Followers("Your Activity","13 followers",R.drawable.accenture_logo3,"Accenture","Vusi Ngwenya liked this"));
+    }
+
+    private class MyListAdapterFollowers extends ArrayAdapter<Followers> {
+        int resource;
+        ArrayList<Followers> followers= new ArrayList<Followers>();
+        public MyListAdapterFollowers(Context context, int resource, List<Followers> objects) {
+            super(context, resource, objects);
+            this.resource = resource;
+            followers = (ArrayList<Followers>)objects;
+        }
+        @Override
+        public View getView(int position,View convertView,ViewGroup parent){
+            View itemView = convertView;
+
+            if(itemView == null){
+                itemView = getLayoutInflater().inflate(resource,parent,false);
+            }
+            Followers clFollowers =followers.get(position);
+
+            TextView tvYourActivity=(TextView) itemView.findViewById(R.id.tvYourActivity);
+            tvYourActivity.setText(clFollowers.getFFunction());
+
+            TextView tvNumOfFollowers=(TextView) itemView.findViewById(R.id.tvNumOfFollowers);
+            tvNumOfFollowers.setText(clFollowers.getNumberOfFollowers());
+
+            ImageView imgLogo = (ImageView) itemView.findViewById(R.id.imgLogo);
+            imgLogo.setImageResource(clFollowers.getLogo());
+
+            TextView tvLogoTitle=(TextView) itemView.findViewById(R.id.tvLogoTitle);
+            tvLogoTitle.setText(clFollowers.getLogoTitle());
+
+            TextView tvPeopleLikes=(TextView) itemView.findViewById(R.id.tvPeopleLikes);
+            tvPeopleLikes.setText(clFollowers.getPeopleLikes());
+
             return itemView;
         }
     }
@@ -265,15 +374,6 @@ public class Home extends AppCompatActivity {
         }
         return inSampleSize;
     }
-  /* public static Bitmap decodeSampledBitmapFromResource(Resources res,int resId,int reqWidth,int reqHeight){
-       final BitmapFactory.Options options = new BitmapFactory.Options();
-       options.inJustDecodeBounds = true;
-       BitmapFactory.decodeResource(res,resId,options);
-       options.inSampleSize = calculateInSampleSize(options,reqWidth,reqHeight);
-
-       options.inJustDecodeBounds = false;
-       return BitmapFactory.decodeResource(res,resId,options);
-   }*/
     //The class for the Array Adapter
     private class MyListAdapterItems extends ArrayAdapter<Items> {
         int resource;
@@ -374,67 +474,10 @@ public class Home extends AppCompatActivity {
             ImageView imgPictureIcon3=(ImageView) itemView.findViewById(R.id.imgShare);
             imgPictureIcon3.setImageResource(icon.getPictureIcon3());
 
-            /*TextView tvName=(TextView) itemView.findViewById(R.id.tvName);
-            tvName.setText(items.getName());
-
-            TextView tvRole=(TextView) itemView.findViewById(R.id.tvRole);
-            tvRole.setText(items.getRole());
-
-            TextView tvTime=(TextView) itemView.findViewById(R.id.tvTime);
-            tvTime.setText(items.getTime());
-
-            TextView tvStory=(TextView) itemView.findViewById(R.id.tvStory);
-            tvStory.setText(items.getStory());
-
-            ImageView imgTimeLinePicture = (ImageView) itemView.findViewById(R.id.imgTimelinePic);
-            imgTimeLinePicture.setImageResource(items.getTimeLinePic());
-
-            TextView tvStoryLine=(TextView) itemView.findViewById(R.id.tvStoryLine);
-            tvTime.setText(items.getStoryLine());
-
-            TextView tvSite=(TextView) itemView.findViewById(R.id.tvSite);
-            tvSite.setText(items.getSite());
-
-            TextView tvLikes=(TextView) itemView.findViewById(R.id.tvLikes);
-            tvLikes.setText(items.getLikes());
-
-            TextView tvLikes2=(TextView) itemView.findViewById(R.id.tvLikes2);
-            tvLikes2.setText(items.getLikes2());
-
-            TextView tvComments=(TextView) itemView.findViewById(R.id.tvComments);
-            tvComments.setText(items.getComments());*/
-
             return itemView;
         }
     }
-  /*  public void populateItemsList2(){
-        String role="Marketing Specialist";
-        String relatedRole="30 Psychologists alumni have this role";
-        String center="Event Center";
-        String camera="Camera";
-        String share="Share";
-    }
-    private class MyListAdapterItems2 extends ArrayAdapter<Items> {
-        int resource;
-        ArrayList<Items> profiles = new ArrayList<Items>();
-        public MyListAdapterItems2(Context context, int resource, List<Items> objects) {
-            super(context, resource, objects);
-            this.resource = resource;
-            itemsList = (ArrayList<Items>)objects;
-        }
-        @Override
-        public View getView(int position,View convertView,ViewGroup parent){
-            View itemView = convertView;
 
-            if(itemView == null){
-                itemView = getLayoutInflater().inflate(resource,parent,false);
-            }
-
-            Items items = itemsList.get(position);
-
-            return itemView;
-        }
-    }*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

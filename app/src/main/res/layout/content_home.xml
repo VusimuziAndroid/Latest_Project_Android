@@ -88,7 +88,7 @@
                         android:text="SECONDTAB"
                         android:focusable="false"
                         android:orientation="vertical">
-                        <LinearLayout android:layout_width="wrap_content"
+                      <!--  <LinearLayout android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="0dp"
                             android:background="#ffffff"
@@ -155,8 +155,33 @@
                                     </LinearLayout>
                                 </TabHost>
                             </LinearLayout>
+                        </LinearLayout> -->
+                        <LinearLayout android:id="@+id/linearButtons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#146986"
+                            android:orientation="horizontal">
+                           <ImageButton android:id="@+id/imgbtnOne"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="Invitations"
+                               android:background="#146986"/>
+                            <ImageButton android:id="@+id/imgbtnTwo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Connections"
+                                android:background="#146986"/>
                         </LinearLayout>
+                        <TextView android:id="@+id/tvPeople"
+                            android:layout_below="@+id/linearButtons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="normal"
+                            android:textSize="14sp"
+                            android:text="People you may know"
+                            android:textColor="#000000"/>
                         <ListView android:id="@+id/lsTimeLineInvitations"
+                            android:layout_below="@+id/tvPeople"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:layout_marginTopPercent="17%"/>
@@ -182,39 +207,47 @@
                     <LinearLayout
                         android:id="@+id/FIFTHTAB"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="FIFTHTAB"
                         android:background="#CFD2D6"
                         android:focusable="false"
                         android:orientation="vertical">
                         <ListView android:id="@+id/lsProfile"
-                         android:layout_width="190dp"
-                         android:layout_height="550dp"
-                         android:layout_marginTop="60dp"
-                         app:layout_marginTopPercent="75%"
-                         app:layout_marginLeftPercent="15%"/>
-
+                         android:layout_width="350dp"
+                         android:layout_height="350dp"
+                         android:layout_marginTop="2dp"
+                            android:layout_marginLeft="5dp"
+                         app:layout_marginTopPercent="0%"
+                         app:layout_marginLeftPercent="5%"/>
                         <LinearLayout android:id="@+id/linearLayoutHorizontal"
+                            android:background="#CFD2D6"
+                            android:layout_below="@+id/lsProfile"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="70dp"
-                            app:layout_marginTopPercent="80%"
+                            android:layout_marginTop="-160dp"
+                            app:layout_marginTopPercent="0%"
+                            android:layout_marginLeft="5dp"
                             app:layout_marginLeftPercent="15%"
                             android:orientation="horizontal">
                             <ListView android:id="@+id/lsViewedProfile"
-                                android:layout_width="70dp"
-                                android:layout_height="350dp"
-                                android:layout_marginTop="60dp"
-                                app:layout_marginTopPercent="75%"
-                                app:layout_marginLeftPercent="15%"/>
-
+                                android:layout_width="171dp"
+                                android:layout_height="95dp"
+                                android:background="#FFFFFF"
+                                />
                             <ListView android:id="@+id/lsViewedShared"
-                                android:layout_width="70dp"
-                                android:layout_height="350dp"
-                                android:layout_marginTop="60dp"
-                                app:layout_marginTopPercent="75%"
-                                app:layout_marginLeftPercent="15%"/>
+                                android:layout_width="171dp"
+                                android:layout_height="95dp"
+                                android:background="#FFFFFF"
+                                android:layout_marginLeft="6dp"/>
                         </LinearLayout>
+                       <ListView android:id="@+id/lsFollowers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="160dp"
+                            android:layout_below="@+id/linearLayoutHorizontal"
+                            android:layout_marginTop="7dp"
+                            android:layout_marginLeft="3dp"
+                            app:layout_marginLeftPercent="3%"
+                            android:background="#FFFFFF"/>
                     </LinearLayout>
                 </FrameLayout>
             </LinearLayout>

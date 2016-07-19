@@ -36,6 +36,7 @@ public class ViewProfile {
           return this.companyName;
      }
      public String getJobArea(){
-          return this.country;
+          return this.jobArea;
      }
+     public String getCountry(){return this.country;}
 }
