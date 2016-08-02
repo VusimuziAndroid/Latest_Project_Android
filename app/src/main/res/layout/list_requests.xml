@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+<de.hdodenhof.circleimageview.CircleImageView android:id="@+id/imgPic1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_widthPercent="20%"
+    app:layout_heightPercent="25%"
+    app:layout_marginTopPercent="8%"
+    app:layout_aspectRatio="50%"
+   android:layout_marginLeft="-5dp"/>
+    <LinearLayout android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_marginLeftPercent="22%"
+        app:layout_marginTopPercent="13%"
+        android:orientation="vertical">
+        <TextView android:id="@+id/tvTimeLineName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:textColor="#000000"/>
+        <TextView android:id="@+id/tvTimeLineRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            android:textColor="#000000"/>
+    </LinearLayout>
+    <ImageView android:id="@+id/imgIcon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="15%"
+        app:layout_heightPercent="20%"
+        app:layout_marginTopPercent="8%"
+        app:layout_marginLeftPercent="66%"/>
+    <ImageView android:id="@+id/imgIcon2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="15%"
+        app:layout_heightPercent="20%"
+        app:layout_marginTopPercent="8%"
+        app:layout_marginLeftPercent="80%"/>
+</android.support.percent.PercentRelativeLayout>

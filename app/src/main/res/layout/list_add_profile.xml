@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/imgProPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="40%"
+        app:layout_heightPercent="40%"
+        app:layout_marginTopPercent="20%"
+        app:layout_marginLeftPercent="35%"
+        />
+    <LinearLayout android:id="@+id/linearLayout1"
+        android:layout_below="@+id/imgProPic"
+        android:layout_width="420dp"
+        android:layout_height="540dp"
+        app:layout_widthPercent="100%"
+        app:layout_heightPercent="10%"
+        android:layout_marginTop="40dp"
+        app:layout_marginTopPercent="50%"
+        app:layout_marginLeftPercent="10%"
+        android:background="#FFFFFF"
+        android:orientation="vertical">
+        <TextView android:id="@+id/tvExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            android:layout_marginLeft="1dp"
+            android:textColor="#000000"/>
+        <TextView android:id="@+id/tvRoles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            android:layout_marginLeft="40dp"/>
+    </LinearLayout>
+    <ImageButton android:id="@+id/imgbtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_widthPercent="50%"
+        app:layout_heightPercent="50%"
+        android:layout_marginTop="60dp"
+        app:layout_marginLeftPercent="60%"
+        android:background="@drawable/ic_add_white_48dp"/>
+</android.support.percent.PercentRelativeLayout>
