@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".Home">
+
+  <!--  <item android:id="@+id/home" android:title="@string/home"
+        android:orderInCategory="100"    app:showAsAction="always"
+        android:icon="@drawable/ic_home_white_48dp"/>
+
+    <item android:id="@+id/profile" android:title="@string/profile"
+        android:orderInCategory="100"    app:showAsAction="always"
+        android:icon="@drawable/ic_person_white_48dp" />
+
+    <item android:id="@+id/chats" android:title="@string/chats"
+        android:orderInCategory="100"    app:showAsAction="always"
+        android:icon="@drawable/ic_question_answer_white_48dp" />
+
+    <item android:id="@+id/groups" android:title="@string/groups"
+        android:orderInCategory="100"    app:showAsAction="always"
+        android:icon="@drawable/ic_group_white_48dp" />-->
+
+    <item android:id="@+id/search" android:title="@string/search"
+        android:orderInCategory="100"    app:showAsAction="always"
+        android:icon="@drawable/ic_search_white_48dp" />
+
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100"    app:showAsAction="always"
+        android:icon="@drawable/ic_apps_white_48dp" >
+        <menu>
+            <item android:id="@+id/home2" android:title="Job Search" android:orderInCategory="100"
+                app:showAsAction="always"   android:icon="@drawable/ic_search_black_48dp"></item>
+            <item android:id="@+id/discover2" android:title="Lynda " android:orderInCategory="100"
+                app:showAsAction="always" android:icon="@drawable/ic_markunread_black_48dp"></item>
+            <item android:id="@+id/profile2" android:title="Lookup " android:orderInCategory="100"
+                app:showAsAction="always" android:icon="@drawable/ic_person_add_black_48dp"></item>
+            <item android:id="@+id/newstory2" android:title="Slideshare " android:orderInCategory="100"
+                app:showAsAction="always" android:icon="@drawable/ic_add_black_48dp"></item>
+              <item android:id="@+id/sharePic" android:title="Logout" android:orderInCategory="100"
+                   app:showAsAction="always" android:icon="@drawable/content_attachment"></item> -->
+        </menu>
+    </item>
+</menu>
