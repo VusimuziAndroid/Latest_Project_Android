@@ -15,16 +15,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_heightPercent="80%"
-        app:layout_marginTopPercent="15%"
-        app:layout_marginLeftPercent="9%"
+        android:layout_marginLeft="0dp"
+        app:layout_marginTopPercent="10%"
+        app:layout_marginLeftPercent="2%"
         android:orientation="vertical">
         <TextView android:id="@+id/tvHeading1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:textColor="#000000"
             android:textStyle="normal"
-            android:text="What's your location ?"/>
+            android:text="What's your Experience ?"/>
         <TextView android:id="@+id/tvMessage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +36,7 @@
             android:textStyle="bold"
             android:textColor="#000000"
             android:text="See people,jobs, and news in your area"/>
-      <!--  <EditText android:id="@+id/etJobTitle"
+        <EditText android:id="@+id/etJobTitle"
             android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvMessage"
@@ -45,10 +46,11 @@
             android:inputType="text"
             android:textSize="15sp"
             android:hint="Job title (Current or previous)"
-            /> -->
+            />
         <Spinner android:id="@+id/spinner"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/etJobTitle"
             android:layout_marginTop="34dp"
             android:drawSelectorOnTop="true"
             android:entries="@+id/Countries"/>
@@ -57,7 +59,7 @@
             android:layout_height="wrap_content"
             app:layout_marginTopPercent="21%"
             android:layout_marginTop="27dp"
-            android:layout_below="@+id/tvJobTitle"
+            android:layout_below="@+id/spinner"
             android:textColor="#000000"
             android:inputType="text"
             android:textSize="15sp"
@@ -69,12 +71,12 @@
             android:layout_marginLeft="35dp"
             android:layout_marginTop="25dp"
             android:orientation="vertical">
-            <Spinner android:id="@+id/spinner"
+            <Spinner android:id="@+id/spinner2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:drawSelectorOnTop="true"
                 android:prompt="OIUNTRY"
-                android:entries="@+id/Countries"/>
+                android:entries="@+id/Places"/>
             <TextView android:id="@+id/tvPostCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,15 +84,29 @@
                 android:textSize="15sp"
                 android:textStyle="normal"
                 android:textColor="#000000"/>
-        </LinearLayout>-->
+        </LinearLayout> -->
+        <Spinner android:id="@+id/spinner2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/etPostCode"
+            android:drawSelectorOnTop="true"
+            android:entries="@+id/Places"/>
+      <!--  <TextView android:id="@+id/tvPostCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            android:textColor="#000000"/> -->
         <Button android:id="@+id/bContinue"
             android:layout_width="325dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayout11"
+            android:layout_below="@+id/spinner2"
             app:layout_marginLeftPercent="10%"
             app:layout_widthPercent="91%"
             app:layout_heightPercent="7%"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="33dp"
             android:layout_marginLeft="0dp"
             android:textColor="#FFFFFF"
             android:text="CONTINUE"

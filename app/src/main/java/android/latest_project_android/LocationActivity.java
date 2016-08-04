@@ -6,9 +6,18 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LocationActivity extends AppCompatActivity {
-
+    Spinner spinner;
+    Spinner spinner2;
+    EditText etJobTitle;
+    EditText etPostCode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,14 +25,17 @@ public class LocationActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        spinner = (Spinner) findViewById(R.id.spinner);
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+
+
+        ArrayAdapter<String> adapter;
+        List<String> list;
+        ArrayAdapter.createFromResource(this,R.array.Countries,android.R.layout.simple_spinner_item);
+
+        ArrayAdapter<String> adapter2;
+        List<String>list2;
+        ArrayAdapter.createFromResource(this,R.array.Places,android.R.layout.simple_spinner_item);
     }
 
 }

@@ -126,7 +126,7 @@
             android:textStyle="normal"
             android:textSize="14sp"
             android:textColor="#FFFFFF"
-            android:onClick="onClickLogin" />
+            android:onClick="onClickSignIn" />
     </LinearLayout>
 
 </android.support.percent.PercentRelativeLayout>

@@ -16,7 +16,7 @@ import android.util.Log;
 public class Database extends SQLiteOpenHelper {
     private static final String LOGCAT = null;
     private static final android.database.sqlite.SQLiteDatabase.CursorFactory MODE_PRIVATE = null;
-    public static final String DATABASE_NAME = "LinkedInDB5.db";
+    public static final String DATABASE_NAME = "LinkedInDB6.db";
     SQLiteDatabase db;
     //The constructor for the SQLite Helper (Datasource class)
     DatabaseValues databaseValues = new DatabaseValues();

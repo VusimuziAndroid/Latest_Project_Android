@@ -47,9 +47,11 @@ public class SignUpActivity extends AppCompatActivity {
     ProgressDialog progressBar;
     ViewPager viewPager;
     PagerAdapter pAdapter;
+    CircleIndicator indicator;
     private LinePageIndicator mLinePageIndicator;
     private CirclePageIndicator mCirclePageIndicator;
     private ViewPager mViewPager;
+    SamplePagerAdapter mPagerAdapter;
   //  CircleIndicator indicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,19 +60,16 @@ public class SignUpActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
+        viewPager.setAdapter(mPagerAdapter);
+        indicator.setViewPager(viewPager);
+       // CircleIndicator indicator = (CircleIndicator) findViewById(R.id.)
+       /* viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager()));
 
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        tabStrip.setViewPager(viewPager);
+        tabStrip.setViewPager(viewPager);*/
        /* mViewPager = (ViewPager) findViewById(R.id.pager);
         mCirclePageIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
 

@@ -1,5 +1,6 @@
 package android.latest_project_android;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class SignInActivity extends AppCompatActivity {
     EditText etUsername1;
@@ -40,8 +42,31 @@ public class SignInActivity extends AppCompatActivity {
             etPassword1.setError("Please supply the password");
         }
         else {
-            Intent welcomeScreen = new Intent(SignInActivity.this,WelcomeScreen.class);
-            startActivity(welcomeScreen);
+
+            String sql = "SELECT Username,FirstName,LastName,Password FROM Users";
+            Cursor cursor=db.rawQuery(sql,null);
+
+            while(cursor.moveToNext()){
+                String username = cursor.getString(0);
+                String firstName =cursor.getString(1);
+                String lastName=cursor.getString(2);
+                String password=cursor.getString(3);
+
+                if(!etUsername1.getText().toString().equals(username) && !etPassword1.getText().toString().equals(password)){
+                    Toast.makeText(SignInActivity.this,"The credentials supplied are incorrect",Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Intent welcomeScreen = new Intent(SignInActivity.this,WelcomeScreen.class);
+                    startActivity(welcomeScreen);
+                }
+
+            }
+
         }
+    }
+
+    public void onClickSignUp(View view){
+        Intent signUpIntent = new Intent(SignInActivity.this,SignUpActivity.class);
+        startActivity(signUpIntent);
     }
 }
