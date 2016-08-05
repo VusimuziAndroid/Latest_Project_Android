@@ -5,35 +5,34 @@ package android.latest_project_android;
  */
 public class WorkExperience {
     String username;
-    String country;
+    String jobTitle;
     String city;
     String jobs;
+    String country;
+    String places;
     String department;
     String postCode;
-    public WorkExperience(String username,String country,String city,String jobs,String department,String postCode){
+    public WorkExperience(String username,String jobTitle,String country,String pCode,String places,String postCode){
         this.username=username;
+        this.jobTitle=jobTitle;
         this.country=country;
-        this.city=city;
-        this.jobs=jobs;
-        this.department=department;
+        this.places=jobs;
         this.postCode=postCode;
     }
     public String getUsername(){
         return this.username;
     }
+    public String getJobTitle(){
+        return this.jobTitle;
+    }
     public String getCountry(){
         return this.country;
     }
-    public String getCity(){
-        return this.city;
-    }
-    public String getJobs(){
-        return this.jobs;
-    }
-    public String getDepartment(){
-        return this.department;
+    public String getPlaces(){
+        return this.places;
     }
     public String getPostCode(){
         return this.postCode;
     }
+
 }

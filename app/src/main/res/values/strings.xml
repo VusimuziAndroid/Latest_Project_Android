@@ -26,6 +26,7 @@
     <string name="title_activity_add_photo"></string>
     <string name="title_activity_sign_in">SignIn</string>
     <string-array name="Countries">
+        <item>Select any country</item>
         <item>Afganistan</item>
         <item>Algeria</item>
         <item>Asia</item>
@@ -58,6 +59,7 @@
         <item>Zimbambwe</item>
     </string-array>
     <string-array name="Places">
+        <item>Select any place</item>
         <item>New York</item>
         <item>Johannesburg Central</item>
         <item>Johannesburg West</item>

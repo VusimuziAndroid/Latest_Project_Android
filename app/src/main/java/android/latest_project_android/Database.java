@@ -30,7 +30,7 @@ public class Database extends SQLiteOpenHelper {
         //The method for creating the new table on the database
         db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME + "(Username TEXT PRIMARY KEY,FirstName TEXT,LastName TEXT,Password TEXT);");
         // db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME2 + "(Username TEXT PRIMARY KEY,Name TEXT,Surname TEXT,Role TEXT,YearsInExperience INTEGER,High_School_Name TEXT,Tertiary_Name TEXT,VolunteerWork TEXT,Profile_Picture INTEGER);");
-        db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME2 + "(Username TEXT PRIMARY KEY,Country TEXT,City TEXT,Job TEXT,Department TEXT,PostCode TEXT);");
+        db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME2 + "(Username TEXT PRIMARY KEY,JobTitle TEXT,Country TEXT,PostCode TEXT,Place TEXT);");
         db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME3 + "(Username TEXT PRIMARY KEY,Picture BLOB NOT NULL);");
       //  db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME3 + "(Username TEXT PRIMARY KEY,HighSchoolName TEXT,YearCompleted INTEGER,TertiaryInstitution TEXT,GraduationYear INTEGER);");
       //  db.execSQL(" CREATE TABLE " + databaseValues.TABLE_NAME4 + "(Username TEXT PRIMARY KEY,V_CompanyName TEXT,V_Position TEXT,V_Duration);");
@@ -59,15 +59,14 @@ public class Database extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(databaseValues.EX_COLUMN_NAME1,workExperience.getUsername());
-        values.put(databaseValues.EX_COLUMN_NAME2,workExperience.getCountry());
-        values.put(databaseValues.EX_COLUMN_NAME3,workExperience.getCity());
-        values.put(databaseValues.EX_COLUMN_NAME4,workExperience.getJobs());
-        values.put(databaseValues.EX_COLUMN_NAME5,workExperience.getDepartment());
-        values.put(databaseValues.EX_COLUMN_NAME6,workExperience.getPostCode());
+        values.put(databaseValues.EX_COLUMN_NAME2,workExperience.getJobTitle());
+        values.put(databaseValues.EX_COLUMN_NAME3,workExperience.getCountry());
+        values.put(databaseValues.EX_COLUMN_NAME4,workExperience.getPlaces());
+        values.put(databaseValues.EX_COLUMN_NAME5,workExperience.getPostCode());
         db.insert(databaseValues.TABLE_NAME2, null, values);
         db.close();
     }
-    public void insertPicture(WorkExperience workExperience){
+   /* public void insertPicture(WorkExperience workExperience){
         Tag Tag=null;
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -79,7 +78,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(databaseValues.EX_COLUMN_NAME6,workExperience.getPostCode());
         db.insert(databaseValues.TABLE_NAME2, null, values);
         db.close();
-    }
+    }*/
    /* public void insertMessage(Message message){
         Tag Tag=null;
         db = this.getWritableDatabase();
@@ -127,10 +126,9 @@ public class Database extends SQLiteOpenHelper {
        private static final String COLUMN_NAME3 = "LastName";
        private static final String COLUMN_NAME4 = "Password";
         private static final String EX_COLUMN_NAME1="Username";
-        private static final String EX_COLUMN_NAME2="Country";
-        private static final String EX_COLUMN_NAME3="City";
-        private static final String EX_COLUMN_NAME4="Job";
-       private static final String EX_COLUMN_NAME5="Department";
-       private static final String EX_COLUMN_NAME6="PostCode";
+        private static final String EX_COLUMN_NAME2="Title";
+        private static final String EX_COLUMN_NAME3="Country";
+        private static final String EX_COLUMN_NAME4="PostCode";
+       private static final String EX_COLUMN_NAME5="Places";
     }
 }

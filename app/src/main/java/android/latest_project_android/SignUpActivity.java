@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.content.Intent;
 
@@ -50,6 +51,8 @@ public class SignUpActivity extends AppCompatActivity {
     private LinePageIndicator mLinePageIndicator;
     private CirclePageIndicator mCirclePageIndicator;
     private ViewPager mViewPager;
+    Spinner spinner;
+    Spinner spinner2;
   //  CircleIndicator indicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +60,15 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.Countries,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
 
-
+        spinner2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this,R.array.Places,android.R.layout.simple_spinner_item);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinner2.setAdapter(adapter2);
        /* viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager()));
 
