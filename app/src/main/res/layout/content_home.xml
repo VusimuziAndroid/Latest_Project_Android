@@ -10,28 +10,28 @@
         android:orientation="horizontal"
         app:layout_widthPercent="340%"
         android:paddingLeft="-17dp"
-        android:layout_marginLeft="-17dp"
+        android:layout_marginLeft="-24dp"
         android:layout_marginTop="50dp"
         android:id="@+id/linearHost"
         android:layout_below="@+id/linearLayout"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true">
+        >
         <!-- The Tab Host for the to be displayed on the screen -->
         <TabHost
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/tabHost"
-            android:layout_marginStart="33dp">
+            android:layout_marginLeft="40dp">
             <!-- The Linearlayout for holding the two vertical linearlayouts -->
             <LinearLayout
                 android:layout_width="375dp"
                 android:layout_height="match_parent"
 
                 android:orientation="vertical">
-                <!-- The Tab Widget -->
+                <!-- The Tab Widget layout_width=370dp-->
                 <TabWidget
                     android:id="@android:id/tabs"
-                    android:layout_width="370dp"
+                    android:layout_width="match_parent"
+                    app:layout_widthPercent="100%"
                     android:background="#008CC9"
                     android:layout_height="wrap_content"
                     />
@@ -56,7 +56,7 @@
                         <LinearLayout android:id="@+id/linearLayout11"
                             android:layout_height="40dp"
                             android:layout_width="380dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="6dp"
                             android:background="#CFD2D6"
                             android:orientation="horizontal">
                             <ImageButton android:id="@+id/imgBtnIcon1"
@@ -68,15 +68,16 @@
                                 android:layout_width="190dp"
                                 android:layout_height="42dp"
                                 android:layout_marginLeft="0.1dp"
+                                android:onClick="onClickAddPhoto"
                                 android:background="@drawable/ic_photo2" />
                         </LinearLayout>
                         <ListView android:id="@+id/lsTimeline"
-                            android:layout_width="355dp"
+                            android:layout_width="352dp"
                             android:layout_height="450dp"
                             app:layout_widthPercent="50%"
                             app:layout_heightPercent="100%"
                             app:layout_marginTopPercent="5%"
-                            app:layout_marginLeftPercent="15%"
+                            app:layout_marginLeftPercent="25%"
                             />
                     </LinearLayout>
                     <!-- The Linearlayout for the COLLECTIONS (second tab) -->
@@ -203,6 +204,13 @@
                         android:text="FOURTHTAB"
                         android:focusable="false"
                         android:orientation="vertical">
+                        <ListView android:id="@+id/lsNotifications"
+                            android:layout_width="350dp"
+                            android:layout_height="350dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginLeft="5dp"
+                            app:layout_marginTopPercent="0%"
+                            app:layout_marginLeftPercent="5%"/>
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/FIFTHTAB"

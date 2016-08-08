@@ -60,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        spinner = (Spinner) findViewById(R.id.spinner);
+       /* spinner = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.Countries,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
         spinner2 = (Spinner) findViewById(R.id.spinner2);
         ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this,R.array.Places,android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spinner2.setAdapter(adapter2);
+        spinner2.setAdapter(adapter2);*/
        /* viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager()));
 

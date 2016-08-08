@@ -67,7 +67,7 @@
             android:textStyle="normal"
             android:textSize="14sp"
             android:textColor="#FFFFFF"
-            android:onClick="onClickSignIn" />
+            android:onClick="onClickSignUp" />
     </LinearLayout>
 
 

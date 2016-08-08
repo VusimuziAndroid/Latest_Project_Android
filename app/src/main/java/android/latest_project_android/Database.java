@@ -61,8 +61,9 @@ public class Database extends SQLiteOpenHelper {
         values.put(databaseValues.EX_COLUMN_NAME1,workExperience.getUsername());
         values.put(databaseValues.EX_COLUMN_NAME2,workExperience.getJobTitle());
         values.put(databaseValues.EX_COLUMN_NAME3,workExperience.getCountry());
-        values.put(databaseValues.EX_COLUMN_NAME4,workExperience.getPlaces());
-        values.put(databaseValues.EX_COLUMN_NAME5,workExperience.getPostCode());
+        values.put(databaseValues.EX_COLUMN_NAME4,workExperience.getPostCode());
+        values.put(databaseValues.EX_COLUMN_NAME5,workExperience.getPlaces());
+
         db.insert(databaseValues.TABLE_NAME2, null, values);
         db.close();
     }

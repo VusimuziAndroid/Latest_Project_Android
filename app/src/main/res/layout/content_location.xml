@@ -13,10 +13,10 @@
 
     <LinearLayout android:id="@+id/newProfile"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_heightPercent="80%"
+        android:layout_height="match_parent"
+        app:layout_heightPercent="180%"
         android:layout_marginLeft="0dp"
-        app:layout_marginTopPercent="4%"
+        app:layout_marginTopPercent="0%"
         app:layout_marginLeftPercent="2%"
         android:orientation="vertical">
         <TextView android:id="@+id/tvHeading1"
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvHeading"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             app:layout_marginTopPercent="18%"
             android:textSize="13sp"
             android:textStyle="bold"
@@ -40,7 +40,7 @@
             android:layout_width="325dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvMessage"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="30dp"
             app:layout_marginTopPercent="20%"
             android:textColor="#000000"
             android:inputType="text"
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvJobTitle"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             app:layout_marginTopPercent="18%"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -103,7 +103,7 @@
             android:textColor="#FFFFFF"
             android:text="CONTINUE"
             android:background="#008CC9"
-            android:onClick="onClick" />
+            android:onClick="onClickLocation" />
     </LinearLayout>
 
 </android.support.percent.PercentRelativeLayout>

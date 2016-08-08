@@ -1,5 +1,6 @@
 package android.latest_project_android;
 
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -28,6 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText etFirstName;
     EditText etLastName;
     Database database;
+    SharedPreferences pref;
+    private SharedPreferences.Editor editor;
     public static final int CONNECTION_TIMEOUT = 10000;
     public static final int READ_TIMEOUT=15000;
     User user;
@@ -89,9 +92,18 @@ public class RegisterActivity extends AppCompatActivity {
                 io.printStackTrace();
                 Toast.makeText(RegisterActivity.this,"Not connected to the server",Toast.LENGTH_SHORT).show();
             }*/
+            pref = getSharedPreferences("UsersPref", HomeActivity.MODE_PRIVATE);
+            editor = pref.edit();
 
-            user = new User(etFirstName.getText().toString(),etLastName.getText().toString(),etEmailAddress.getText().toString(),etPassword.getText().toString());
-            database.insertUsers(user);
+            user = new User(etEmailAddress.getText().toString(),etFirstName.getText().toString(),etLastName.getText().toString().toString(),etPassword.getText().toString());
+
+            editor.putString("Username",user.getUsername());
+            editor.putString("FirstName",user.getName());
+            editor.putString("LastName", user.getSurname());
+            editor.putString("Password", user.getPassword());
+            editor.commit();
+
+          //  database.insertUsers(user);
             Intent workExperience = new Intent(RegisterActivity.this, LocationActivity.class);
             startActivity(workExperience);
             Toast.makeText(RegisterActivity.this,"Successfully registered!!!",Toast.LENGTH_LONG).show();

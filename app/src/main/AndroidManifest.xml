@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".HomeActivity"
+            android:name=".SignUpActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
@@ -19,26 +19,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUpActivity"
-            android:label="@string/title_activity_sign_up"
+            android:name=".HomeActivity"
+            android:label=""
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name=".FriendshipRequests"
             android:label="@string/title_activity_friendship__requests"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddProfile"
             android:label="@string/title_activity_add_profile"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SignInActivity"
             android:label="@string/title_activity_sign_in"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".WelcomeScreen"
             android:label="@string/title_activity_welcome_screen"
@@ -46,12 +46,17 @@
         <activity
             android:name=".LocationActivity"
             android:label="@string/title_activity_location"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".AddPhotoActivity"
             android:label="@string/title_activity_add_photo"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         >>>>>>> Stashed changes
+        <activity
+            android:name=".Share"
+            android:label="@string/title_activity_share"
+            android:theme="@style/AppTheme" >
+        </activity>
     </application>
 
 </manifest>

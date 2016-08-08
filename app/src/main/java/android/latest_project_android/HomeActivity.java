@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
-
+import android.content.Intent;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,17 +43,22 @@ public class HomeActivity extends AppCompatActivity {
     ArrayAdapter<SharedProfile> sharedProfilesAdapter;
     ArrayAdapter<Followers> followersAdapter;
     ArrayAdapter<Icons>iconAdapter;
+    ArrayAdapter<NotificationsClass>notificationsAdapter;
     private List<ViewProfile> profileList = new ArrayList<ViewProfile>();
     private List<TimeLineInvitations> invitationsList = new ArrayList<TimeLineInvitations>();
     private List<Icons> iconList = new ArrayList<Icons>();
     private List<ViewedProfile> viewProfileList = new ArrayList<ViewedProfile>();
     private List<SharedProfile> sharedProfileList = new ArrayList<SharedProfile>();
     private List<Followers> followersList = new ArrayList<Followers>();
+    private List<NotificationsClass> notificationsList = new ArrayList<NotificationsClass>();
+
     ListView lsTimeLineInvitations;
     ListView lsViewedProfile;
     ListView lsSharedProfile;
     ListView lsFollowers;
     ListView lsIcons;
+    ListView lsNotifications;
+
     ArrayAdapter<Items>itemAdapter2;
     ImageView imgRoundPic2;
     private List<Items> itemsList2 = new ArrayList<Items>();
@@ -105,6 +110,12 @@ public class HomeActivity extends AppCompatActivity {
         followersAdapter = new MyListAdapterFollowers(getApplicationContext(),R.layout.list_activity, followersList);
         lsFollowers = (ListView) findViewById(R.id.lsFollowers);
         lsFollowers.setAdapter(followersAdapter);
+
+        getNotificationsList();
+        notificationsAdapter = new MyListAdapterNotifications(getApplicationContext(),R.layout.list_activity, notificationsList);
+        lsNotifications = (ListView) findViewById(R.id.lsNotifications);
+        lsNotifications.setAdapter(notificationsAdapter);
+
 
         displayTab();
      //   displayTab2();
@@ -171,8 +182,8 @@ public class HomeActivity extends AppCompatActivity {
         String allComments="I think this is the amazing leap for conwumer electricity cost";
 
         itemsList.add(new Items(proPicture, name, role, time, storyLine, timelinePicture, story, sites, likes, likes2, comments, R.drawable.ic_like, R.drawable.ic_comments, R.drawable.ic_share2));
-        itemsList.add(new Items(R.drawable.ic_timeline_pic4, "Jason Anderson", "Manager of Solar Slash", "20 mins", "think the biggest impact will be?", R.drawable.timeline_pic1, "SolarCity", "SolarCity.com", "news24.com", "55 likes", "200 comments", R.drawable.ic_like, R.drawable.ic_comments, R.drawable.ic_share2));
-        itemsList.add(new Items(R.drawable.ic_timeline_pic3, "James Smith", role, time, storyLine, timelinePicture, story, sites, likes, likes2, comments, R.drawable.ic_like, R.drawable.ic_comments, R.drawable.ic_share2));
+       /* itemsList.add(new Items(R.drawable.ic_timeline_pic4, "Jason Anderson", "Manager of Solar Slash", "20 mins", "think the biggest impact will be?", R.drawable.timeline_pic1, "SolarCity", "SolarCity.com", "news24.com", "55 likes", "200 comments", R.drawable.ic_like, R.drawable.ic_comments, R.drawable.ic_share2));
+        itemsList.add(new Items(R.drawable.ic_timeline_pic3, "James Smith", role, time, storyLine, timelinePicture, story, sites, likes, likes2, comments, R.drawable.ic_like, R.drawable.ic_comments, R.drawable.ic_share2));*/
     }
     //The method for populating the list view
     public void getInvitationsList(){
@@ -358,6 +369,47 @@ public class HomeActivity extends AppCompatActivity {
             return itemView;
         }
     }
+    public void getNotificationsList(){
+        followersList.add(new Followers("Your Activity","13 followers",R.drawable.accenture_logo3,"Accenture","Vusi Ngwenya liked this"));
+    }
+
+    private class MyListAdapterNotifications extends ArrayAdapter<NotificationsClass> {
+        int resource;
+        ArrayList<NotificationsClass> notifications = new ArrayList<NotificationsClass>();
+
+        public MyListAdapterNotifications(Context context, int resource, List<NotificationsClass> objects) {
+            super(context, resource, objects);
+            this.resource = resource;
+            notifications = (ArrayList<NotificationsClass>) objects;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View itemView = convertView;
+
+            if (itemView == null) {
+                itemView = getLayoutInflater().inflate(resource, parent, false);
+            }
+            NotificationsClass clNotifications = notifications.get(position);
+
+            ImageView imgProPicture = (ImageView) itemView.findViewById(R.id.imgLogo);
+            imgProPicture.setImageResource(clNotifications.getProfilePicture());
+
+            TextView tvLine1 = (TextView) itemView.findViewById(R.id.tvLine1);
+            tvLine1.setText(clNotifications.getTextLine1());
+
+            TextView tvLine2 = (TextView) itemView.findViewById(R.id.tvLine2);
+            tvLine2.setText(clNotifications.getTextLine2());
+
+            TextView tvTime = (TextView) itemView.findViewById(R.id.tvTime);
+            tvTime.setText(clNotifications.getTime());
+
+            TextView tvViews = (TextView) itemView.findViewById(R.id.tvView);
+            tvViews.setText(clNotifications.getView());
+
+            return itemView;
+        }
+    }
     public static int calculateInSampleSize(
             BitmapFactory.Options options,int reqWidth,int reqHeight){
         final int height = options.outHeight;
@@ -476,6 +528,12 @@ public class HomeActivity extends AppCompatActivity {
 
             return itemView;
         }
+
+    }
+
+    public void onClickAddPhoto(View view){
+        Intent photoIntent = new Intent(HomeActivity.this,AddPhotoActivity.class);
+        startActivity(photoIntent);
     }
 
     @Override

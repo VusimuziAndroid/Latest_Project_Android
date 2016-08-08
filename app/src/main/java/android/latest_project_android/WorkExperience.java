@@ -6,18 +6,16 @@ package android.latest_project_android;
 public class WorkExperience {
     String username;
     String jobTitle;
-    String city;
-    String jobs;
     String country;
     String places;
-    String department;
+
     String postCode;
-    public WorkExperience(String username,String jobTitle,String country,String pCode,String places,String postCode){
+    public WorkExperience(String username,String jobTitle,String country,String postCode,String places){
         this.username=username;
         this.jobTitle=jobTitle;
         this.country=country;
-        this.places=jobs;
         this.postCode=postCode;
+        this.places=places;
     }
     public String getUsername(){
         return this.username;

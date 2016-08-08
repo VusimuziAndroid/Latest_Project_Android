@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/linearLayoutHorizontal2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_marginTopPercent="5%"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imgIcon2"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="We found "
+                android:id="@+id/tvLine1"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                app:layout_marginLeftPercent="25%"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="35dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/tvLine2"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_marginLeftPercent="18%"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/tvTime2"
+                android:textSize="13sp"
+                android:layout_marginLeft="10dp" />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:layout_below="@+id/linearLayoutHorizontal2"
+            android:id="@+id/tvView"
+            android:textSize="13sp"
+            android:layout_marginLeft="10dp" />
+    </LinearLayout>
+</android.support.percent.PercentRelativeLayout>
