@@ -73,14 +73,11 @@ public class HomeActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
        // getSupportActionBar().setDisplayShowCustomEnabled(true);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        populateItemsList();
+        itemAdapter = new MyListAdapterItems(getApplicationContext(),R.layout.list_timeline, itemsList);
+        lsItems = (ListView) findViewById(R.id.lsTimeline);
+        lsItems.setAdapter(itemAdapter);
+
         getInvitationsList();
         invitationsAdapter = new MyListAdapterInvitations(getApplicationContext(),R.layout.list_requests,invitationsList);
         lsTimeLineInvitations = (ListView) findViewById(R.id.lsTimeLineInvitations);
@@ -111,14 +108,43 @@ public class HomeActivity extends AppCompatActivity {
         lsFollowers = (ListView) findViewById(R.id.lsFollowers);
         lsFollowers.setAdapter(followersAdapter);
 
-        getNotificationsList();
-        notificationsAdapter = new MyListAdapterNotifications(getApplicationContext(),R.layout.list_activity, notificationsList);
-        lsNotifications = (ListView) findViewById(R.id.lsNotifications);
-        lsNotifications.setAdapter(notificationsAdapter);
+       /* getInvitationsList();
+        invitationsAdapter = new MyListAdapterInvitations(getApplicationContext(),R.layout.list_requests,invitationsList);
+        lsTimeLineInvitations = (ListView) findViewById(R.id.lsTimeLineInvitations);
+        lsTimeLineInvitations.setAdapter(invitationsAdapter);*/
 
+       /* getProfileDetails();
+        profileAdapter = new MyListAdapterProfile(getApplicationContext(),R.layout.list_profile,profileList);
+        lsProfile = (ListView) findViewById(R.id.lsProfile);
+        lsProfile.setAdapter(profileAdapter);
+
+        populateItemsList();
+        itemAdapter = new MyListAdapterItems(getApplicationContext(),R.layout.list_timeline, itemsList);
+        lsItems = (ListView) findViewById(R.id.lsTimeline);
+        lsItems.setAdapter(itemAdapter);
+
+        getNumberOfViewedProfile();
+        viewedProfilesAdapter = new MyListAdapterViewedProfile(getApplicationContext(),R.layout.list_viewed_profile, viewProfileList);
+        lsViewedProfile = (ListView) findViewById(R.id.lsViewedProfile);
+        lsViewedProfile.setAdapter(viewedProfilesAdapter);
+
+        getNumberOfSharedProfile();
+        sharedProfilesAdapter = new MyListAdapterSharedProfile(getApplicationContext(),R.layout.list_shared_profile, sharedProfileList);
+        lsSharedProfile = (ListView) findViewById(R.id.lsViewedShared);
+        lsSharedProfile.setAdapter(sharedProfilesAdapter);
+
+        getFollowersList();
+        followersAdapter = new MyListAdapterFollowers(getApplicationContext(),R.layout.list_activity, followersList);
+        lsFollowers = (ListView) findViewById(R.id.lsFollowers);
+        lsFollowers.setAdapter(followersAdapter);*/
+
+       /* getNotificationsList();
+        notificationsAdapter = new MyListAdapterNotifications(getApplicationContext(),R.layout.list_notification, notificationsList);
+        lsNotifications = (ListView) findViewById(R.id.lsNotifications);
+        lsNotifications.setAdapter(notificationsAdapter);*/
 
         displayTab();
-     //   displayTab2();
+        displayTab2();
     }
     //The method for displaying the Tab Host on the Welcome Screen
     public void displayTab(){
@@ -134,7 +160,7 @@ public class HomeActivity extends AppCompatActivity {
         tabhost.addTab(secondText);
         TabHost.TabSpec thirdText = tabhost.newTabSpec("THIRDTAB");
         thirdText.setContent(R.id.THIRDTAB);
-        thirdText.setIndicator("",getResources().getDrawable(R.drawable.ic_question_answer_white_48dp));
+        thirdText.setIndicator("", getResources().getDrawable(R.drawable.ic_question_answer_white_48dp));
         tabhost.addTab(thirdText);
         TabHost.TabSpec fourthText = tabhost.newTabSpec("FOURTHTAB");
         fourthText.setContent(R.id.FOURTHTAB);
@@ -145,13 +171,13 @@ public class HomeActivity extends AppCompatActivity {
         fifthText.setIndicator("", getResources().getDrawable(R.drawable.ic_person_white_48dp));
         tabhost.addTab(fifthText);
     }
-  /*  public void displayTab2(){
+    public void displayTab2(){
         tabhost2 = (TabHost) findViewById(R.id.tabHost2);
         tabhost2.setup();
-        TabHost.TabSpec  firstTab = tabhost2.newTabSpec("CANCEL");
+      /*  TabHost.TabSpec  firstTab = tabhost2.newTabSpec("CANCEL");
         firstTab.setContent(R.id.CANCEL);
         firstTab.setIndicator("", getDrawable(R.drawable.ic_clear_white_48dp));
-        tabhost2.addTab(firstTab);
+        tabhost2.addTab(firstTab);*/
         TabHost.TabSpec secondTab = tabhost2.newTabSpec("INVITATIONS");
         secondTab.setContent(R.id.INVITATIONS);
         secondTab.setIndicator("INVITATIONS", getDrawable(R.drawable.ic_photo));
@@ -160,7 +186,7 @@ public class HomeActivity extends AppCompatActivity {
         thirdTab.setContent(R.id.CONNECTIONS);
         thirdTab.setIndicator("CONNECTIONS", getDrawable(R.drawable.ic_photo));
         tabhost2.addTab(thirdTab);
-    }*/
+    }
     //The method for populating the list view
     public void populateItemsList(){
         int proPicture=R.drawable.pro_picture;
@@ -188,11 +214,11 @@ public class HomeActivity extends AppCompatActivity {
     //The method for populating the list view
     public void getInvitationsList(){
         invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic1, "You and Karisa are now", "Connected", R.drawable.ic_question_answer_black_48dp, 0));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic2, "Patric Farewell", "Communications Professionals", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_person_add_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic2, "Patric Farewell", "Communications Professionals", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_account_circle_black_48dp));
         invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic3, "You and Tonniane Marie are now friends", "connected", 0, R.drawable.ic_question_answer_black_48dp));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic4, "Wiston", "Global Business director", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_person_add_black_48dp));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic5, "Paolo", "Marketing Manager - I07 Wearable Professional", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_person_add_black_48dp));
-        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic6, "H. Jay", "Principal Communications Group", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_person_add_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic4, "Wiston", "Global Business director", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_account_circle_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic5, "Paolo", "Marketing Manager - I07 Wearable Professional", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_account_circle_black_48dp));
+        invitationsList.add(new TimeLineInvitations(R.drawable.ic_linkedin_pro_pic6, "H. Jay", "Principal Communications Group", R.drawable.ic_highlight_off_black_48dp, R.drawable.ic_account_circle_black_48dp));
     }
     //The class for the Array Adapter
     private class MyListAdapterInvitations extends ArrayAdapter<TimeLineInvitations> {
@@ -369,8 +395,8 @@ public class HomeActivity extends AppCompatActivity {
             return itemView;
         }
     }
-    public void getNotificationsList(){
-        followersList.add(new Followers("Your Activity","13 followers",R.drawable.accenture_logo3,"Accenture","Vusi Ngwenya liked this"));
+   /* public void getNotificationsList(){
+        notificationsList.add(new NotificationsClass(R.drawable.ic_work_black_48dp,"We have found","10 jobs you may be interested in","5h","VIEW PROFILE"));
     }
 
     private class MyListAdapterNotifications extends ArrayAdapter<NotificationsClass> {
@@ -392,7 +418,7 @@ public class HomeActivity extends AppCompatActivity {
             }
             NotificationsClass clNotifications = notifications.get(position);
 
-            ImageView imgProPicture = (ImageView) itemView.findViewById(R.id.imgLogo);
+            ImageView imgProPicture = (ImageView) itemView.findViewById(R.id.imgIcon2);
             imgProPicture.setImageResource(clNotifications.getProfilePicture());
 
             TextView tvLine1 = (TextView) itemView.findViewById(R.id.tvLine1);
@@ -401,7 +427,7 @@ public class HomeActivity extends AppCompatActivity {
             TextView tvLine2 = (TextView) itemView.findViewById(R.id.tvLine2);
             tvLine2.setText(clNotifications.getTextLine2());
 
-            TextView tvTime = (TextView) itemView.findViewById(R.id.tvTime);
+            TextView tvTime = (TextView) itemView.findViewById(R.id.tvTime2);
             tvTime.setText(clNotifications.getTime());
 
             TextView tvViews = (TextView) itemView.findViewById(R.id.tvView);
@@ -409,7 +435,7 @@ public class HomeActivity extends AppCompatActivity {
 
             return itemView;
         }
-    }
+    }*/
     public static int calculateInSampleSize(
             BitmapFactory.Options options,int reqWidth,int reqHeight){
         final int height = options.outHeight;
@@ -536,6 +562,10 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(photoIntent);
     }
 
+    public void onClickShare(View view){
+        Intent shareIntent = new Intent(HomeActivity.this,ShareActivity.class);
+        startActivity(shareIntent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -553,6 +583,28 @@ public class HomeActivity extends AppCompatActivity {
        /* if (id == R.id.action_settings) {
             return true;
         }*/
+        switch(id){
+            case R.id.JobSearch:
+                Intent jobSearchIntent = new Intent(HomeActivity.this,JobSearchActivity.class);
+                startActivity(jobSearchIntent);
+                break;
+            case R.id.Lynda:
+               /* Intent lyndaIntent = new Intent(HomeActivity.this,LyndaActivity.this);
+                startActivity(lyndaIntent);*/
+                break;
+            case R.id.LookUp:
+                 /* Intent lookupIntent = new Intent(HomeActivity.this,LookUpActivity.this);
+                startActivity(lookupIntent);*/
+                break;
+            case R.id.SlideShare:
+                 /* Intent slideShareIntent = new Intent(HomeActivity.this,slideShareActivity.this);
+                startActivity(slideShareIntent);*/
+                break;
+            case R.id.Logout:
+                Intent logoutIntent = new Intent(HomeActivity.this,SignUpActivity.class);
+                startActivity(logoutIntent);
+                break;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

@@ -53,8 +53,18 @@
             android:theme="@style/AppTheme" />
         >>>>>>> Stashed changes
         <activity
-            android:name=".Share"
+            android:name=".ShareActivity"
             android:label="@string/title_activity_share"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".JobSearchActivity"
+            android:label="@string/title_activity_job_search"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".SearchMessageActivity"
+            android:label="@string/title_activity_search_message"
             android:theme="@style/AppTheme" >
         </activity>
     </application>

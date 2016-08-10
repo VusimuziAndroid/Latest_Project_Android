@@ -25,7 +25,6 @@
             <LinearLayout
                 android:layout_width="375dp"
                 android:layout_height="match_parent"
-
                 android:orientation="vertical">
                 <!-- The Tab Widget layout_width=370dp-->
                 <TabWidget
@@ -63,6 +62,7 @@
                                 android:layout_width="190dp"
                                 android:layout_height="42dp"
                                 android:layout_marginRight="3dp"
+                                android:onClick="onClickShare"
                                 android:background="@drawable/ic_share" />
                             <ImageButton android:id="@+id/imgBtnIcon2"
                                 android:layout_width="190dp"
@@ -89,18 +89,19 @@
                         android:text="SECONDTAB"
                         android:focusable="false"
                         android:orientation="vertical">
-                      <!--  <LinearLayout android:layout_width="wrap_content"
+                       <!-- <LinearLayout android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="0dp"
                             android:background="#ffffff"
-                            android:orientation="vertical">
-                            <LinearLayout android:layout_height="wrap_content"
+                            android:orientation="vertical"> -->
+                          <LinearLayout android:layout_height="wrap_content"
+                              android:id="@+id/linearTabhost"
                                 android:layout_width="wrap_content"
                                 app:layout_widthPercent="140%"
                                 android:orientation="horizontal"
                                 android:paddingLeft="-16dp"
                                 app:layout_marginLeftPercent="-16%"
-                                android:background="#ffffff">
+                                android:background="@drawable/bg_img4">
                                 <TabHost
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
@@ -123,7 +124,7 @@
                                             app:layout_aspectRatio="100%"
                                             app:layout_heightPercent="100%"
                                             android:focusable="false">
-                                            <LinearLayout
+                                         <!--   <LinearLayout
                                                 android:id="@+id/CANCEL"
                                                 android:layout_width="match_parent"
                                                 android:layout_height="match_parent"
@@ -131,7 +132,7 @@
                                                 android:orientation="vertical"
                                                 app:layout_marginLeftPercent="10%"
                                                 >
-                                            </LinearLayout>
+                                            </LinearLayout> -->
                                             <LinearLayout
                                                 android:id="@+id/INVITATIONS"
                                                 android:layout_width="match_parent"
@@ -156,24 +157,30 @@
                                     </LinearLayout>
                                 </TabHost>
                             </LinearLayout>
-                        </LinearLayout> -->
+                      <!--  </LinearLayout> -->
                         <LinearLayout android:id="@+id/linearButtons"
+                            android:layout_below="@+id/linearTabhost"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="#146986"
-                            android:orientation="horizontal">
-                           <ImageButton android:id="@+id/imgbtnOne"
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:text="Invitations"
-                               android:background="#146986"/>
-                            <ImageButton android:id="@+id/imgbtnTwo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Connections"
-                                android:background="#146986"/>
+                            android:background="@drawable/bg_img4"
+                            android:orientation="vertical">
+                          <TextView android:id="@+id/tvupdates"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textColor="#FFFFFF"
+                              android:textSize="19sp"
+                              android:text="No new updates. Want to add to your connection ?"/>
+                        <Button android:id="@+id/bSyncContacts"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            app:layout_widthPercent="140%"
+                            app:layout_marginTopPercent="20%"
+                            android:layout_marginLeft="100dp"
+                            app:layout_marginLeftPercent="50%"
+                            android:background="@drawable/gradient_bg_button_color_2"
+                            android:text="SYNC CONTACTS"/>
                         </LinearLayout>
-                        <TextView android:id="@+id/tvPeople"
+                         <TextView android:id="@+id/tvPeople"
                             android:layout_below="@+id/linearButtons"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -191,10 +198,26 @@
                         android:id="@+id/THIRDTAB"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#FFFFFF"
+                        android:background="#CFD2D6"
                         android:text="THIRDTAB"
                         android:focusable="false"
                         android:orientation="vertical">
+                    <LinearLayout android:id="@+id/linearSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="#FFFFFF">
+                        <ImageButton android:id="@+id/imgBtnIcon3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:src="@drawable/ic_search_black_48dp"/>
+                        <ImageButton android:id="@+id/imgBtnIcon4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#FFFFFF"
+                            android:text="Search Message"/>
+                    </LinearLayout>
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/FOURTHTAB"

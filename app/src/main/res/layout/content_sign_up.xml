@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgLinkedInLogo"
             app:layout_marginTopPercent="4%"
-            app:layout_marginLeftPercent="12%"
+            app:layout_marginLeftPercent="22%"
             android:orientation="horizontal">
 
             <TextView
@@ -35,11 +35,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_marginTopPercent="60%"
-                app:layout_marginLeftPercent="45%"
+                app:layout_marginLeftPercent="65%"
                 android:textStyle="normal"
                 android:text="@string/buttontext4"
                 android:textColor="#000000"
-                android:textSize="27sp" />
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/tvTM"
@@ -51,7 +51,7 @@
                 android:textStyle="bold"
                 android:text= "@string/buttontext5"
                 android:textColor="#000000"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
         </LinearLayout>
       <!--  <LinearLayout android:id="@+id/linearLayoutSlidingTabs"
             android:layout_width="wrap_content"

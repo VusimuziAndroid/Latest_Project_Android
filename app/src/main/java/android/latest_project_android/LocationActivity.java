@@ -73,8 +73,6 @@ public class LocationActivity extends AppCompatActivity {
             String postCode =etPostCode.getText().toString();
             String places = spinner2.getSelectedItem().toString();
 
-           // Toast.makeText(LocationActivity.this,username+" &"+jobTitle+" &"+country+" &"+postCode+" &"+places,Toast.LENGTH_LONG).show();
-
             workExperience = new WorkExperience(username,jobTitle,country,postCode,places);
             database.insertWorkExperience(workExperience);
             Intent homeActivity = new Intent(LocationActivity.this,HomeActivity.class);

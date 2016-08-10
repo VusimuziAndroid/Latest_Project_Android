@@ -26,15 +26,15 @@
         android:orderInCategory="100"    app:showAsAction="always"
         android:icon="@drawable/ic_apps_white_48dp" >
         <menu>
-            <item android:id="@+id/home2" android:title="Job Search" android:orderInCategory="100"
+            <item android:id="@+id/JobSearch" android:title="Job Search" android:orderInCategory="100"
                 app:showAsAction="always"   android:icon="@drawable/ic_search_black_48dp"></item>
-            <item android:id="@+id/discover2" android:title="Lynda " android:orderInCategory="100"
+            <item android:id="@+id/Lynda" android:title="Lynda " android:orderInCategory="100"
                 app:showAsAction="always" android:icon="@drawable/ic_markunread_black_48dp"></item>
-            <item android:id="@+id/profile2" android:title="Lookup " android:orderInCategory="100"
+            <item android:id="@+id/LookUp" android:title="Lookup " android:orderInCategory="100"
                 app:showAsAction="always" android:icon="@drawable/ic_person_add_black_48dp"></item>
-            <item android:id="@+id/newstory2" android:title="Slideshare " android:orderInCategory="100"
+            <item android:id="@+id/SlideShare" android:title="Slideshare " android:orderInCategory="100"
                 app:showAsAction="always" android:icon="@drawable/ic_add_black_48dp"></item>
-              <item android:id="@+id/sharePic" android:title="Logout" android:orderInCategory="100"
+              <item android:id="@+id/Logout" android:title="Logout" android:orderInCategory="100"
                    app:showAsAction="always" android:icon="@drawable/content_attachment"></item> -->
         </menu>
     </item>

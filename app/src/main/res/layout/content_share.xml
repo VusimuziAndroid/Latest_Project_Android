@@ -9,16 +9,156 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_share" tools:context="android.latest_project_android.Share">
 
-    <ListView
+    <!-- <LinearLayout android:layout_height="wrap_content"
+        android:id="@+id/linearTabhost"
+        android:layout_width="wrap_content"
+        app:layout_widthPercent="140%"
+        android:orientation="horizontal"
+        android:paddingLeft="-16dp"
+        app:layout_marginLeftPercent="-16%"
+        android:background="#008CC9">
+        <TabHost
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tabHostShare"
+            app:layout_marginStartPercent="33%"
+            style="@style/TabText"
+            >
+            <LinearLayout
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_aspectRatio="100%"
+                    app:layout_heightPercent="100%"
+                    android:focusable="false">
+                       <LinearLayout
+                           android:id="@+id/CANCEL"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:focusable="false"
+                           android:orientation="vertical"
+                           app:layout_marginLeftPercent="10%"
+                           >
+                           <LinearLayout android:id="@+id/linearProfile"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:orientation="horizontal">
+                               <CircleImageView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   app:layout_widthPercent="50%"
+                                   app:layout_heightPercent="50%"/>
+                               <EditText android:id="@+id/etMessage"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:hint="Write something or use @ to mention someone"/>
+                           </LinearLayout>
+                           <ListView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_below="@+id/linearProfile"
+                               android:id="@+id/lsSharedMessages"
+                               app:layout_heightPercent="50%"
+                               android:layout_alignParentTop="true"
+                               android:layout_centerHorizontal="true"
+                               android:layout_marginTop="41dp" />
+
+                            <LinearLayout
+                               android:orientation="horizontal"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_below="@+id/lsSharedMessages"
+                               app:layout_heightPercent="50%"
+
+                               android:layout_marginTop="0dp"
+                               android:layout_alignBottom="@+id/lsSharedMessages"
+                               android:layout_centerHorizontal="true"
+                               android:layout_marginBottom="32dp">
+                               <ImageButton
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:id="@+id/imgBtnAttachPicture"
+                                   android:layout_marginLeft="50dp"
+                                   android:background="#FFFFFF"
+                                   android:src="@drawable/ic_attach_file_black_48dp"
+                                   android:layout_gravity="bottom" />
+
+                               <ImageButton
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:id="@+id/imgBtnCamera"
+                                   android:layout_marginLeft="10dp"
+                                   android:background="#FFFFFF"
+                                   android:src="@drawable/ic_linked_camera_black_48dp"
+                                   android:layout_gravity="bottom" />
+
+                               <Button
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:id="@+id/imgBtnShare"
+                                   android:layout_marginLeft="60dp"
+                                   android:text="SHARE"
+                                   android:background="@drawable/gradient_bg_button_color_3"
+                                   android:layout_gravity="bottom" />
+                           </LinearLayout>
+                       </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/SHARE"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="SHARE"
+                        android:focusable="false"
+                        android:orientation="vertical"
+                        android:paddingLeft="-10dp"
+                        app:layout_marginLeftPercent="0%">
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/MESSAGE"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="MESSAGE"
+                        android:focusable="false"
+                        android:orientation="vertical"
+                        app:layout_marginLeftPercent="0%"
+                        >
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+    </LinearLayout> -->
+    <LinearLayout android:id="@+id/linearProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_widthPercent="50%"
+            app:layout_heightPercent="50%"/>
+        <EditText android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write something or use @ to mention someone"/>
+    </LinearLayout>
+  <!--  <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearProfile"
         android:id="@+id/lsSharedMessages"
         app:layout_heightPercent="50%"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp" />
+        android:layout_marginTop="41dp" /> -->
 
-    <LinearLayout
+   <!-- <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,30 +169,31 @@
         android:layout_alignBottom="@+id/lsSharedMessages"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp">
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgBtnAttachPicture"
+        android:layout_marginLeft="50dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/ic_attach_file_black_48dp"
+        android:layout_gravity="bottom" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageView"
-            android:src="@drawable/ic_linkedin_pro_pic1"
-            android:layout_gravity="bottom" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgBtnCamera"
+        android:layout_marginLeft="10dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/ic_linked_camera_black_48dp"
+        android:layout_gravity="bottom" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="30dp"
-            android:hint="Type here"
-            android:id="@+id/textView" />
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
-            android:layout_marginLeft="50dp"
-            android:background="#FFFFFF"
-            android:src="@drawable/ic_share_black_48dp"
-            android:layout_gravity="bottom" />
-    </LinearLayout>
-
-
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgBtnShare"
+        android:layout_marginLeft="60dp"
+        android:text="SHARE"
+        android:background="@drawable/gradient_bg_button_color_3"
+        android:layout_gravity="bottom" />
+    </LinearLayout> -->
 </android.support.percent.PercentRelativeLayout>

@@ -103,7 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
             editor.putString("Password", user.getPassword());
             editor.commit();
 
-          //  database.insertUsers(user);
+            database.insertUsers(user);
             Intent workExperience = new Intent(RegisterActivity.this, LocationActivity.class);
             startActivity(workExperience);
             Toast.makeText(RegisterActivity.this,"Successfully registered!!!",Toast.LENGTH_LONG).show();

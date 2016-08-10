@@ -13,14 +13,27 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imgShared" />
+            android:id="@+id/imgSharedPicture" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:textStyle="bold"
+            android:textSize="13sp"
+            android:id="@+id/tvSharedTitle"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Large Text"
-            android:id="@+id/tvShared"
+            android:layout_marginLeft="20dp"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            android:id="@+id/tvSharedMessage"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </android.support.percent.PercentRelativeLayout>

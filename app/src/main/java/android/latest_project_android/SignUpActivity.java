@@ -60,60 +60,6 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-       /* spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this,R.array.Countries,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spinner.setAdapter(adapter);
-
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        ArrayAdapter adapter2 = ArrayAdapter.createFromResource(this,R.array.Places,android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_item);
-        spinner2.setAdapter(adapter2);*/
-       /* viewPager = (ViewPager) findViewById(R.id.viewPager);
-        viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager()));
-
-        PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        tabStrip.setViewPager(viewPager);*/
-       /* mViewPager = (ViewPager) findViewById(R.id.pager);
-        mCirclePageIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
-
-        CustomPagerAdapter pagerAdapter = new CustomPagerAdapter(getApplicationContext(),R.drawable.ic_fiber_manual_record_white_48dp);
-        mViewPager.setAdapter(pagerAdapter);
-
-        mCirclePageIndicator.setViewPager(mViewPager);*/
-       // SimplePagerAdapter
-        /*viewPager = (ViewPager) findViewById(R.id.viewPager);
-        indicator = (CircleIndicator) findViewById(R.id.indicator);
-        viewPager.setAdapter(pAdapter);
-        indicator.setViewPager(viewPager);*/
-      //  viewPager.setAdapter(adapter);
-
-       /* populateProfileList();
-        adapter = new MyListAdapter(getApplicationContext(),R.layout.list_single, profile);
-        list = (ListView) findViewById(R.id.lsProfile);
-        list.setAdapter(adapter);*/
-        // mProgress = (ProgressBar) findViewById(R.id.prgssBar);
-        // textCounter = (TextView) findViewById(R.id)
-      /*  mProgress.setProgress(100);
-        myCountDownTimer = new MyCountRowTimer(10000,500);
-        myCountDownTimer.start();*/
-
-        //  showProgressBar();
-
-        /*{
-            @Override
-            public Fragment getItem(int position) {
-                return null;
-            }
-
-            @Override
-            public int getCount() {
-                return 0;
-            }
-        } */
-        //   viewPager = (ViewPager) findViewById(R.id.pager);
-// RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-
     }
     public void onClickLogin2(View view){
         Intent signin = new Intent(SignUpActivity.this,SignInActivity.class);
