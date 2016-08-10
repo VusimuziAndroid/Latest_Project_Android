@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:background="#000000"/>
         </LinearLayout> -->
-         <ProgressBar
+       <!--  <ProgressBar
             android:id="@+id/inderterminate_horizontal_progress"
             android:layout_below="@+id/linearLayout2"
             app:layout_marginTopPercent="10%"
@@ -84,7 +84,7 @@
             android:max="1"
             android:background="#FFFFFF"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            android:indeterminate="true" />
+            android:indeterminate="true" /> -->
           <!-- <com.astuetz.PagerSlidingTabStrip android:id="@+id/tabstrip"
                app:pstsShouldExpand="true"
                app:pstsTextAllCaps="true"
@@ -150,7 +150,17 @@
               android:layout_alignParentBottom="true"
               android:layout_alignParentLeft="true"
               android:layout_alignParentStart="true"/> -->
-
+        <android.support.v4.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="400dp"/>
+       <com.viewpagerindicator.CirclePageIndicator
+           android:id="@+id/pagerIndicator"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="5dp"
+           android:layout_marginTop="5dp"
+           android:padding="3dp"/>
         <Button
             android:id="@+id/bJoin"
             android:layout_below="@+id/inderterminate_horizontal_progress"

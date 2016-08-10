@@ -108,6 +108,11 @@ public class HomeActivity extends AppCompatActivity {
         lsFollowers = (ListView) findViewById(R.id.lsFollowers);
         lsFollowers.setAdapter(followersAdapter);
 
+        getNotificationsList();
+        notificationsAdapter = new MyListAdapterNotifications(getApplicationContext(),R.layout.list_notification, notificationsList);
+        lsNotifications = (ListView) findViewById(R.id.lsNotifications);
+        lsNotifications.setAdapter(notificationsAdapter);
+
        /* getInvitationsList();
         invitationsAdapter = new MyListAdapterInvitations(getApplicationContext(),R.layout.list_requests,invitationsList);
         lsTimeLineInvitations = (ListView) findViewById(R.id.lsTimeLineInvitations);
@@ -395,7 +400,7 @@ public class HomeActivity extends AppCompatActivity {
             return itemView;
         }
     }
-   /* public void getNotificationsList(){
+    public void getNotificationsList(){
         notificationsList.add(new NotificationsClass(R.drawable.ic_work_black_48dp,"We have found","10 jobs you may be interested in","5h","VIEW PROFILE"));
     }
 
@@ -435,7 +440,7 @@ public class HomeActivity extends AppCompatActivity {
 
             return itemView;
         }
-    }*/
+    }
     public static int calculateInSampleSize(
             BitmapFactory.Options options,int reqWidth,int reqHeight){
         final int height = options.outHeight;
